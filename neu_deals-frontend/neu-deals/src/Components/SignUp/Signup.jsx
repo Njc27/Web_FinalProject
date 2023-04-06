@@ -1,5 +1,5 @@
 import React from 'react'
-import bgImg from '../../Assests/signup.jpg'
+import bgImg from '../../Assests/img5.jpg'
 import { useForm } from 'react-hook-form';
 import './Signup.css'
 
@@ -12,8 +12,8 @@ const Signup = () => {
     <section>
     <div className="register">
         <div className="col-1">
-            <h2>Sign In</h2>
-            <span>register and enjoy your shopping!!</span>
+            <h2>Register here!</h2>
+            <span>For a fair and share deal!!</span>
 
             <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
                 <input type="text" {...register("First Name")} placeholder='First Name' />
