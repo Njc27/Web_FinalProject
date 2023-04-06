@@ -2,3 +2,12 @@ p{
     font-family: var(--Righteous);
     font-size: 1rem;
 }
+
+.col-2 img{
+    width: 480px;
+    height: 80%;
+    object-fit: cover;
+    align-self: flex-end;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

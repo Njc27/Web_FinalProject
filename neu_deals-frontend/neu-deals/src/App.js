@@ -12,8 +12,10 @@ function App() {
       
       <Router>
       <Nav />
+
       <div className="container">
       <Routes>
+      <Route exact path='/' element={<Home />}/>
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
