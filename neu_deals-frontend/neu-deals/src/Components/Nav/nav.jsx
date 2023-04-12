@@ -1,16 +1,20 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import './nav.css'
+import {AiOutlineShoppingCart} from 'react-icons/ai'
+import SideBar from "../SideBar/SideBar"
+import Signup from "../SignUp/Signup"
 
 export default function Nav() {
   return (
     <nav className="nav">
+
       <Link to="/" className="site-title">
-        Neu Deals
+        NEU DEALS
       </Link>
       <ul>
-        <CustomLink to="/home">Home</CustomLink>
-        <CustomLink to="/login">Login</CustomLink>
-        <CustomLink to="/signup">Sign Up</CustomLink>
+        <CustomLink to="/Signup"><AiOutlineShoppingCart className="cart_icon"/></CustomLink>
+        <CustomLink to="/login"><button className="sell">Sell</button></CustomLink>
+        {/* <CustomLink to="/signup">SIGN UP</CustomLink> */}
       </ul>
     </nav>
   )

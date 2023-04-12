@@ -6,11 +6,13 @@ import Login from './Components/Login/login.jsx'
 import Signup from './Components/SignUp/Signup';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Footer from './Components/Footer/footer'
+import SideBar from './Components/SideBar/SideBar';
 function App() {
   return (
     <>
       
       <Router>
+      {/* <SideBar /> */}
       <Nav />
 
       <div className="container">
@@ -21,9 +23,9 @@ function App() {
           <Route path="/Signup" element={<Signup />} />
           
         </Routes>
-        <Footer />
-        </div>
         
+        </div>
+        <Footer />
       </Router>
         
       
