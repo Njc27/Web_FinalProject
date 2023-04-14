@@ -1,6 +1,7 @@
 import react, { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import Nav from "./nav"
+import Footer from "./footer"
 import PageTitle from "./sellTitle"
 export default function(){
     
@@ -11,7 +12,11 @@ export default function(){
         },
         {
             categoryName:'Electronics',
-            categoryItems: ['Laptop','Mobile']
+            categoryItems: ['Laptop','Mobile','Headphone']
+        },
+        {
+            categoryName:'Books',
+            categoryItems:["Academics Books","Casual Books","Notes"] 
         }
     ];
     
@@ -37,19 +42,20 @@ export default function(){
         <>
             <Nav/>
             <PageTitle/>
-            <div className="mt-4 container border" style={{width : "60%"}}>
+            <div className="my-4 container border" style={{width : "60%"}}>
                 <h5 className="my-3 mx-2" style={{textAlign:"left"}}>CHOOSE YOUR CATEGORY</h5>
                 <div className="category border m-2 d-flex flex-row"style={{height:"500px"}}>
                     <div className="col-md-6">
                         <h5 className="my-3">Categories</h5>
-                        {categories.map(item => <div className="border" style={{height:"50px"}}><button className="btn btn-outline-secondary" id={item.categoryName} style={{width:"100%",height:"100%"}} onClick={handleClick}>{item.categoryName}</button></div>)}
+                        {categories.map(item => <div className="my-1" style={{height:"50px"}}><button className="btn btn-outline-secondary" id={item.categoryName} style={{width:"95%",height:"100%"}} onClick={handleClick}>{item.categoryName}</button></div>)}
                     </div>
                     <div className="col-md-6">
                         <h5 className="my-3">Items</h5>
-                        {showitems && items.map(item => <div className="border" style={{height:"50px"}} ><button className="btn btn-outline-secondary" id={item} style={{width:"100%",height:"100%"}} onClick={getFormPage}>{item}</button></div>)}
+                        {showitems && items.map(item => <div className="my-1" style={{height:"50px"}} ><button className="btn btn-outline-secondary" id={item} style={{width:"95%",height:"100%"}} onClick={getFormPage}>{item}</button></div>)}
                     </div>
                 </div>
             </div>
+            {/* <Footer/> */}
         </>
     )
 }

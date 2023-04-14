@@ -67,7 +67,20 @@ export default function(){
                         <hr/>
                             <h5 className="my-3">CONFIRM YOUR LOCATION</h5>
                             <div className="address">
-                                
+                                <div class="form-group my-2">
+                                    <label for="inputAddress">Address</label>
+                                    <input type="text" class="form-control" id="AddressLine1" placeholder="1234 Main St"/>
+                                </div> 
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="inputCity">City</label>
+                                        <input type="text" class="form-control" id="CityName"/>
+                                    </div>
+                                    <div class="form-group col-md-2 my-2">
+                                        <label for="inputZip">Zip</label>
+                                        <input type="text" class="form-control" id="ZipCode"/>
+                                    </div>
+                                </div>
                             </div>
                         <hr/>
                             <h5 className="my-3">REVIEW YOUR DETAILS</h5>
