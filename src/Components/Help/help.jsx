@@ -1,76 +1,83 @@
-import React from "react"; 
+import React, { useState } from "react"; 
 import { Container, Row, Col } from "react-bootstrap";
-import { contactConfig } from "/Users/amulyamurahari/Downloads/Web_FinalProject-002795461_NamithaJC/neu_deals-frontend/neu-deals/src/Components/Help/content_option.js"
+import "./help.css";
+
+import imageSrc from "./husky1.webp";
 
 export default function ContactUs() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // TODO: Add code to handle form submission
+  }
 
   return (
       <Container>
-     
         <Row className="mb-5 mt-3">
           <Col lg="8">
-            <h1 className="display-4 mb-4">Contact Me</h1>
+            <h1 className="display-4 mb-4 fancy-font">GET HELP HERE !</h1>
+            <h1 className="display-4 mb-4 fancy-font marquee"><span>FILL OUT THE FORM BELOW TO SEND US A MESSAGE</span></h1>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
         <Row className="sec_sp">
-          <Col lg="5" className="mb-5">
-            <h3 className="color_sec py-4">Get in touch</h3>
-            <address>
-              <strong>Email:</strong>{" "}
-              <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
-                {contactConfig.YOUR_EMAIL}
-              </a>
-              <br />
-              <br />
-              {contactConfig.hasOwnProperty("YOUR_FONE") ? (
-                <p>
-                  <strong>Phone:</strong> {contactConfig.YOUR_FONE}
-                </p>
-              ) : (
-                ""
-              )}
-            </address>
-            <p>{contactConfig.description}</p>
-          </Col>
+          {/* <Col lg="5" className="mb-5">
+            <p className="fancy-font">FILL OUT THE FORM BELOW TO SEND US A MESSAGE.</p>
+          </Col> */}
           <Col lg="7" className="d-flex align-items-center">
-            <form  className="help__form w-100">
+            <form onSubmit={handleSubmit} className="help__form w-100">
               <Row>
-                <Col lg="6" className="form-group">
+                <Col lg="12" className="form-group d-flex align-items-center">
+                <a href="https://www.northeastern.edu/">
+                <img src={imageSrc} alt="Image" className="ml-auto mr-3" /></a>
+                </Col>
                   <input
-                    className="form-control"
+                    className="form-control rounded-0 fancy-font"
                     id="name"
                     name="name"
                     placeholder="Name" 
                     type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     required 
                   />
-                </Col>
-                <Col lg="6" className="form-group">
+              </Row>
+              <Row>
+                <Col lg="12" className="form-group d-flex align-items-center">
                   <input
-                    className="form-control rounded-0"
+                    className="form-control rounded-0 fancy-font"
                     id="email"
                     name="email"
                     placeholder="Email"
                     type="email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required 
                   />
                 </Col>
               </Row>
-              <textarea
-                className="form-control rounded-0"
-                id="message"
-                name="message"
-                placeholder="Message"
-                rows="5" 
-                required
-              ></textarea>
+              <Row>
+                <Col lg="12" className="form-group d-flex align-items-center">
+                  <textarea
+                    className="form-control rounded-0 fancy-font"
+                    id="message"
+                    name="message"
+                    placeholder="Message"
+                    rows="5" 
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required
+                  ></textarea>
+                </Col>
+              </Row>
               <br />
               <Row>
                 <Col lg="12" className="form-group">
-                  <button className="btn ac_btn" type="submit"> 
-                  Send
+                  <button className="btn ac_btn fancy-font" type="submit"> 
+                    Send
                   </button>
                 </Col>
               </Row>

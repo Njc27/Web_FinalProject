@@ -1,32 +1,36 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
-// import { userLogin } from "../Actions/userAction";
 import "../Login/login.css"
 
-const login = () => {
+const Login = () => {
+  const navigate = useNavigate();
+
+  const handleRegisterClick = () => {
+    navigate('/SignUpUi');
+  }
+
   return (
-    <div className="login-page">
-    <h1> Login Page</h1>
-    <form className="box">
-    <label>
-            Email:
-            <input type="text" className="login-input"/>
-        </label>
-        <br/>
-        <label>
-            Username:
-            <input type="text" className="login-input" />
-        </label>
-        <br/>
-        <label>
-            Password:
-            <input type="password" className="login-input" />
-        </label>
-        <br/>
-        <button type="submit" className="login-button" >Sign In</button>
-    </form>
-</div>
+    <div className="center">
+      <h1>SIGN IN</h1>
+      <form method="post">
+        <div className="txt_field">
+          <input type="text" required />
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div className="txt_field">
+          <input type="password" required />
+          <span></span>
+          <label>Password</label>
+        </div>
+        <div className="pass">Forgot Password?</div>
+        <input type="submit" value="Login" />
+        <div className="signup_link">
+          Not Registered yet? <a href="#" onClick={handleRegisterClick}>Register here</a>
+        </div>
+      </form>
+    </div>
   )
 }
 
-export default login
+export default Login;

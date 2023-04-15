@@ -2,14 +2,15 @@ import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/home.jsx'
-import Login from './Components/Login/login.jsx'
+import SignUp from './Components/SignUpUi/SignUpUi.jsx';
+import Login from './Components/Login/login.jsx';
 import Sell from './Components/Sell/sell.jsx';
 import Cart from './Components/Cart/cart.jsx';
 import WishList from './Components/Wishlist/wishList.jsx';
 import Help from './Components/Help/help.jsx'
 import Categories from './Components/Categories/categories';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Footer from './Components/Footer/footer'
+import Footer from './Components/Footer/footer';
 function App() {
   return (
     <>
@@ -18,7 +19,8 @@ function App() {
       <div className="container">
       <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/SignUpUi" element={<SignUp />} />
+          <Route path="/Login" element={<Login />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishList" element={<WishList />} />
