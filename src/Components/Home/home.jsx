@@ -86,7 +86,7 @@ const home = () => {
       </Card.Body>
     </Card><br></br></Col>
     <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={Table1} />
+      <Card.Img variant="top" src={Table2} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
         <Card.Text>
@@ -97,7 +97,7 @@ const home = () => {
       </Card.Body>
     </Card><br></br></Col>
     <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={Table1} />
+      <Card.Img variant="top" src={Table3} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
         <Card.Text>
@@ -107,20 +107,9 @@ const home = () => {
         <Button variant="primary">Details</Button>
       </Card.Body>
     </Card><br></br></Col>
-    </Row><Row>
+    {/* </Row><Row> */}
         <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={Table1} />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Details</Button>
-      </Card.Body>
-    </Card><br></br></Col>
-        <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={Table1} />
+      <Card.Img variant="top" src={Chair} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
         <Card.Text>
@@ -132,6 +121,17 @@ const home = () => {
     </Card><br></br></Col>
         <Col><Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={Table1} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Details</Button>
+      </Card.Body>
+    </Card><br></br></Col>
+        <Col><Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={Table2} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
         <Card.Text>
@@ -173,6 +173,21 @@ const home = () => {
       </Accordion.Item>
     </Accordion>
     <br></br>
+    
+    {/* Button----- */}
+    <div>
+    <Button variant='danger'>Post questions<br></br></Button>
+    <br></br>
+    </div>
+
+    {/* Alert------ */}
+    <br></br><br></br><br></br><div class="alert alert-info" role="alert">
+    <strong>Heads up! This alert needs your attention ! The Big Summer Sale is 
+    almost coming to an end ! Hurry Up !</strong>
+  </div>
+
+  {/* ProgressBar------ */}
+  <ProgressBar animated now={75} />;
 
 
   </div>
