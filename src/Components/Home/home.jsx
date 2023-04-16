@@ -31,8 +31,8 @@ const home = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Small hanging closet</h3>
+          <p>Only for $30</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -43,8 +43,8 @@ const home = () => {
         />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Table lamp</h3>
+          <p>Only for $15</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -55,13 +55,116 @@ const home = () => {
         />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Queen size bed</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          Only for $200
           </p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    <br></br>
+
+    <div class="container-header">
+      <p class="section-head-p">View Popular Items</p>
+    </div>
+    <br>
+    </br>
+
+    {/* Card----- */}
+    <Container>
+      <Row>
+        <Col><Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={Table1} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Details</Button>
+      </Card.Body>
+    </Card><br></br></Col>
+    <Col><Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={Table1} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Details</Button>
+      </Card.Body>
+    </Card><br></br></Col>
+    <Col><Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={Table1} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Details</Button>
+      </Card.Body>
+    </Card><br></br></Col>
+    </Row><Row>
+        <Col><Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={Table1} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Details</Button>
+      </Card.Body>
+    </Card><br></br></Col>
+        <Col><Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={Table1} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Details</Button>
+      </Card.Body>
+    </Card><br></br></Col>
+        <Col><Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={Table1} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Details</Button>
+      </Card.Body>
+    </Card><br></br></Col>
+        <Col><Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={Table1} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Details</Button>
+      </Card.Body>
+    </Card><br></br></Col>
+        <Col><Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={Table1} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Details</Button>
+      </Card.Body>
+    </Card><br></br></Col>
+      </Row>
+    </Container>
+    
     <br></br>
     
 
