@@ -1,3 +1,4 @@
+
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Closet from '../../Assests/Closet1.jpg'
@@ -179,3 +180,4 @@ const home = () => {
 }
 
 export default home;
+
