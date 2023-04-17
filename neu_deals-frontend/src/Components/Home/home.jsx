@@ -20,8 +20,7 @@ import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { useNavigate } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar'
-import '../Navbar/Navbar.css'
+
 
 
 
@@ -32,7 +31,6 @@ const Home = () => {
   }
   return (
     <div>
-      <Navbar />
 
       {/* Carousel----- */}
     <Carousel>

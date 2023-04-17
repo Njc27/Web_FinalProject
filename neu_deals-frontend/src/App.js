@@ -16,10 +16,10 @@ function App() {
   return (
     <>
       <Router>
-        <Home></Home>
       <Navbar />
       <div className="container">
       <Routes>
+        <Route exact path="/" element={<Home/>}/>
           <Route path="/home" element={<Home />} />
           <Route path="/SignUpUi" element={<SignUp />} />
           <Route path="/Login" element={<Login />} />
