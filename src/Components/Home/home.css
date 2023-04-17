@@ -21,12 +21,14 @@
     .carousel {
         transform: translate(0%, 25%);
         margin-bottom: 35px;
-        padding-top: 0px;
         width: 100%;
         height: auto;
     }
     .card{
         flex-basis: calc(50% - 20px);
+    }
+    .container{
+        padding-top: 0.2rem;
     }
 }
 
