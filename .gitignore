@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 /neu_deals-frontend/node_modules/
 ../.DS_Store
 ../.gitignore
 .DS_Store
 server/node_modules
+=======
+node_modules
+>>>>>>> 0752eb4 (carousel code commit)
