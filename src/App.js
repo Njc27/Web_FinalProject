@@ -16,6 +16,7 @@ function App() {
   return (
     <>
       <Router>
+        <Home></Home>
       <Navbar />
       <div className="container">
       <Routes>

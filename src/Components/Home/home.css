@@ -1,12 +1,14 @@
 .section-head-p{
     color:azure;
     font: 1.5em sans-serif;
+    margin-right: 35px;
+    padding-right: 35px;
 }
 
 .carousel {
     margin-top: 25px;
     align-content: center;
-    transform: translate(25%, 0%);
+    transform: translate(35%, 0%);
     width:840px;
     height:550px;
   }
