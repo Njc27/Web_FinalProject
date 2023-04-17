@@ -12,6 +12,7 @@
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
   background-image: url(white.webp);
   padding-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .center h1 {
@@ -124,7 +125,9 @@ input[type="submit"]:hover {
     width: 90%;
     height: auto;
     max-width: 400px;
-    max-height: 550px;
+    max-height: 1000px;
+    transform: translate(-80%,0);
+    margin: 135px;
   }
 }
 
@@ -142,16 +145,15 @@ input[type="submit"]:hover {
 }
 
 
-
-
-/* @media screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {
   .center {
     width: 90%;
-    height: auto;
+    height: 800px;
     max-width: 300px;
     max-height: 500px;
-    transform: translate(0, 0);
-    margin: 0 auto;
+    transform: translate(-70%, 0);
+    margin: 80px;
+    padding-bottom: 50px;
   }
 
    .txt_field label {
@@ -166,4 +168,4 @@ input[type="submit"]:hover {
   .signup_link {
    font-size: 14px;
   }
-  } */
+  }
