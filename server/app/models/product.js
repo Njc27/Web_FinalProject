@@ -9,9 +9,9 @@ module.exports = mongoose.model("Products",{
     actualPrice:{type:Number, required:true},
     discountPrice:{type:Number, required:true},
     userId: {type:mongoose.SchemaTypes.ObjectId,ref:"User", required:true},
-    img1:[imageFiles],
-    // img2:[imageFiles],
-    // img3:[imageFiles],
-    // img4:[imageFiles],
+    image1:{type:mongoose.SchemaTypes.ObjectId,ref:"ImageFiles", required:true},
+    image2:{type:mongoose.SchemaTypes.ObjectId,ref:"ImageFiles", required:true},
+    image3:{type:mongoose.SchemaTypes.ObjectId,ref:"ImageFiles", required:true},
+    image4:{type:mongoose.SchemaTypes.ObjectId,ref:"ImageFiles", required:true},
     location:{type:String,required:true}
 });

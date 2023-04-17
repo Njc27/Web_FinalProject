@@ -1,5 +1,7 @@
 const userController = require('./controllers/userController');
 const productController = require("./controllers/productController");
+const fileController = require("./controllers/fileController");
+
 
 let express = require('express'),
     multer = require('multer'),
@@ -36,6 +38,8 @@ module.exports = function (app) {
   app.get("/user/getAll", userController.getAllUsers);
   app.put("/user/edit/:email", userController.updateUsers);
   app.delete("/user/delete", userController.deleteUser);
-  app.post("/products/post", upload.single('img1'),productController.post);
+  app.post("/products/post",productController.post);
+  app.get("/products/getAll",productController.getAll);
+  app.post("/image/upload",upload.single('image'),fileController.uploadImage);
 };
 

@@ -4,6 +4,7 @@ let express = require('express'),
     uuidv4 = require('uuidv4'),
     router = express.Router();
 const DIR = './public/';
+const {fileSizeFormatter,saveImageArray} = require("../../utils/commonFunctions");
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, DIR);
@@ -26,50 +27,27 @@ var upload = multer({
 });
 // Product model
 let Product = require('../models/Product');
+let Images = require('../models/images');
 
 
 
-// router.post('/postProduct', upload('profileImg'), (req, res, next) => {
     const post = async(req,res,next) =>{
-    // upload.single('images');
-    console.log(req.body);
-    const url = req.protocol + '://' + req.get('host')
-    console.log(url);
+    try{
+        const url = req.protocol + '://' + req.get('host')
     const prod = new Product({
         _id: new mongoose.Types.ObjectId(),
-        prodName:req.body.prodName ,
+        prodName:req.body.prodName ,    
         categoryName: req.body.categoryName,
         brandName:req.body.brandName,
         tags: req.body.tags,
         actualPrice:req.body.actualPrice,
         discountPrice:req.body.discountPrice,
         userId: req.body.userId,
-        img1:{
-            imageName:req.body.img1.fileName,
-            imagePath:req.body.img1.path,
-            imageType:req.body.img1.mimetype,
-            imageSize:fileSizeFormatter(req.body.img1.size,2)
-        },
-        // img2:{
-        //     imageName:req.img2.originalname,
-        //     imagePath:req.img2.path,
-        //     imageType:req.img2.mimetype,
-        //     imageSize:fileSizeFormatter(req.img2.size,2)
-        // },
-        // img3:{
-        //     imageName:req.img3.originalname,
-        //     imagePath:req.img3.path,
-        //     imageType:req.img3.mimetype,
-        //     imageSize:fileSizeFormatter(req.img3.size,2)
-        // },
-        // img4:{
-        //     imageName:req.img4.originalname,
-        //     imagePath:req.img4.path,
-        //     imageType:req.img4.mimetype,
-        //     imageSize:fileSizeFormatter(req.img4.size,2)
-        // },
+        image1:req.body.image1,
+        image2:req.body.image2,
+        image3:req.body.image3,
+        image4:req.body.image4,
         location:req.body.location,
-        // profileImg: url + '/public/' + req.file.filename
     });
     prod.save().then(result => {
         res.status(201).json({
@@ -81,18 +59,33 @@ let Product = require('../models/Product');
                 error: err
             });
     })
+    }
+    catch(error){
+        return error;
+    }
 };
 
-// router.get("/", (req, res, next) => {
+
     const getAll = async (req,res,next) =>{
-    Product.find().then(data => {
+    Product.find().populate('userId').populate('image1').populate('image2').populate('image3').populate('image4').then(data => {
         res.status(200).json({
-            message: "User list retrieved successfully!",
+            message: "Product list retrieved successfully!",
+            users: data
+        });
+    });
+};
+
+const getImages = async (req,res,next) =>{
+    console.log("Reachedd")
+    Images.find().then(data => {
+        res.status(200).json({
+            message: "Image list retrieved successfully!",
             users: data
         });
     });
 };
 module.exports = {
     getAll,
+    getImages,
     post,
 }

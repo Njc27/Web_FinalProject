@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 // import bgImg from '../../Assests/sale.jpeg'
 import { useForm } from 'react-hook-form';
 import './SignUpUi.css'
+import { useDispatch } from 'react-redux';
+import { userSignup } from '../../redux/actions/loginAction';
 import Fetch from 'react-fetch'
-
 
 // const fetch = require('node-fetch');
 
@@ -11,7 +12,37 @@ import Fetch from 'react-fetch'
 
 const SignUpUi = () => {
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm()
+  const dispatch = useDispatch();
+  const [fname, setFname] = useState('');
+    // console.log(userName);
+    const [lname, setLname] = useState('');
+    // console.log(password);
+    const [email, setEmail] = useState('');
+    const [phoneNumber, setPhone] = useState('');
+    const [address, setAddr] = useState('');
+    const [password, setPass] = useState('');
+
+  const handleSignIn = async(e) => {
+    e.preventDefault();
+    dispatch(
+      userSignup(fname,lname,email,phoneNumber,address,password)
+    )
+    
+.then((res) => {
+    console.log(res)
+    if(res.data.validate){
+        props.handle();
+        navigate('/home')
+       }
+    else{
+        alert('Enter valid credentials', res.message);
+       }
+}).catch((error) => {
+    console.log(error)
+});
+}
+
+    const { register,watch, formState: { errors } } = useForm()
     const onSubmit = data => console.log(data);
 
   return (
@@ -21,11 +52,12 @@ const SignUpUi = () => {
             <h2>REGISTER HERE</h2>
             <span>FOR A FAIR AND SHARE DEAL</span>
 
-            <form id='form' className='flex flex-col' onSubmit={handleSubmit(onSubmit)}>
+            <form id='form' className='flex flex-col' onSubmit={handleSignIn(onSubmit)}>
     
           <input type="text"
             placeholder="Enter First name"
             {...register("fname", { required: true })}
+            onChange={(event)=>{setFname(event.target.value)}}
           />
           <error>
             {errors.fname?.type === "required" && "Name is required"}
@@ -35,6 +67,7 @@ const SignUpUi = () => {
           <input
             placeholder="Enter Last name"
             {...register("lname", { required: true })}
+            onChange={(event)=>{setLname(event.target.value)}}
           />
           <error>
             {errors.lname?.type === "required" && "Name is required"}
@@ -46,6 +79,7 @@ const SignUpUi = () => {
               required: true,
               pattern: /[a-z.]*[@]\bnortheastern.edu/,
             })}
+            onChange={(event)=>{setEmail(event.target.value)}}
           />
           <error>
             {errors.email?.type === "required" && "Email is required"}
@@ -60,6 +94,7 @@ const SignUpUi = () => {
             required: true,
             pattern: /\d{3}-?\d{3}-\d{4}$/,
             })}
+            onChange={(event)=>{setPhone(event.target.value)}}
           />
           <error>
             {errors.number?.type === "required" &&
@@ -73,6 +108,7 @@ const SignUpUi = () => {
             {...register("number", {
             required: true,
             })}
+            onChange={(event)=>{setAddr(event.target.value)}}
           />
           <error>
             {errors.number?.type === "required" &&
@@ -87,6 +123,7 @@ const SignUpUi = () => {
             pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,12}$/,
               
             })}
+            onChange={(event)=>{setPass(event.target.value)}}
           />
           <error>
             {errors.password?.type === "required" &&
