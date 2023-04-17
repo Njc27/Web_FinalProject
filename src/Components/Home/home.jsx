@@ -17,9 +17,16 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import { useNavigate } from 'react-router-dom'
 
 
-const home = () => {
+
+
+const Home = () => {
+  const navigate = useNavigate();
+  const productDetails = ()=>{
+    navigate('/ProductDetails')
+  }
   return (
     <div>
 
@@ -82,7 +89,7 @@ const home = () => {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
       </Card.Body>
     </Card><br></br></Col>
     <Col><Card style={{ width: '18rem' }}>
@@ -93,7 +100,7 @@ const home = () => {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
       </Card.Body>
     </Card><br></br></Col>
     <Col><Card style={{ width: '18rem' }}>
@@ -104,7 +111,7 @@ const home = () => {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
       </Card.Body>
     </Card><br></br></Col>
     {/* </Row><Row> */}
@@ -116,7 +123,7 @@ const home = () => {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
       </Card.Body>
     </Card><br></br></Col>
         <Col><Card style={{ width: '18rem' }}>
@@ -127,7 +134,7 @@ const home = () => {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
       </Card.Body>
     </Card><br></br></Col>
         <Col><Card style={{ width: '18rem' }}>
@@ -138,7 +145,7 @@ const home = () => {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
       </Card.Body>
     </Card><br></br></Col>
       </Row>
@@ -194,5 +201,5 @@ const home = () => {
   )
 }
 
-export default home;
+export default Home;
 
