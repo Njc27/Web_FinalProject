@@ -13,5 +13,6 @@ module.exports = mongoose.model("Products",{
     image2:{type:mongoose.SchemaTypes.ObjectId,ref:"ImageFiles", required:true},
     image3:{type:mongoose.SchemaTypes.ObjectId,ref:"ImageFiles", required:true},
     image4:{type:mongoose.SchemaTypes.ObjectId,ref:"ImageFiles", required:true},
-    location:{type:String,required:true}
+    location:{type:String,required:true},
+    isActive:{type:Boolean,required:true,default:true}
 });

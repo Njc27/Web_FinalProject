@@ -40,6 +40,8 @@ module.exports = function (app) {
   app.delete("/user/delete", userController.deleteUser);
   app.post("/products/post",productController.post);
   app.get("/products/getAll",productController.getAll);
+  app.get("/products/getProduct/:id",productController.getProductById);
+  app.get("/image/getAll",fileController.getImages);
   app.post("/image/upload",upload.single('image'),fileController.uploadImage);
 };
 

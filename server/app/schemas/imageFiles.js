@@ -16,6 +16,10 @@ const imageFiles = new mongoose.Schema({
     imageSize:{
         type:String,
         required:true
+    },
+    imageUrl:{
+        type:String,
+        required:true
     }
 },{timestamps:true})
 
