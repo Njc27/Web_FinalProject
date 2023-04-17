@@ -1,5 +1,5 @@
 .help__form {
-    /* background-color: #000000; */
+    background-color: #000000;
     background-image: url(black.webp);
     background-repeat: no-repeat;
     background-size: cover;
@@ -141,9 +141,11 @@
       }
     }
     
-    @media (min-width: 992px) {
+
+    /* @media (min-width: 992px) { */
       /* Styles for larger screens */
-      .ml-auto.mr-3 {
+      /* .ml-auto.mr-3 {
+
         width: 450px;
         height: 300px;
         margin-left: 10px;
@@ -155,4 +157,5 @@
       .sec_sp .fancy-font {
         font-size: 1.2rem;
       }
-    }
+    } */
+
