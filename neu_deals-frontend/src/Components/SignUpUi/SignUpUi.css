@@ -1,5 +1,4 @@
 .register {
-
   margin-left: 10%;
   max-width: 900px;
   width: 600px;
@@ -22,9 +21,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #000000;
   border-bottom: 1px solid rgb(0, 0, 0);
-
   /* padding: 2px 0; */
-
   padding-top: 1px;
 }
 
@@ -37,7 +34,6 @@
 #form {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 350px;
-
   width:360;
   margin: 2em auto;
 }

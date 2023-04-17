@@ -1,48 +1,4 @@
 .section-head-p{
     color:azure;
     font: 1.5em sans-serif;
-
-    margin-right: 35px;
-    padding-right: 35px;
-}
-
-.carousel {
-    margin-top: 25px;
-    align-content: center;
-    transform: translate(25%, 0%);
-    width:840px;
-    height:550px;
-  }
-
- .card{
-    transform: translate(25%, 0%);
-    margin-right: 35px;
-    margin-bottom: 35px;
- }
-
- @media (max-width: 768px) {
-    .carousel {
-        transform: translate(0%, 25%);
-        margin-bottom: 35px;
-        width: 100%;
-        height: auto;
-    }
-    .card{
-        flex-basis: calc(50% - 20px);
-    }
-    .container{
-        padding-top: 0.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel {
-        transform: none;
-        width: 100%;
-        height: auto;
-    }
-    .card{
-        flex-basis: calc(100% - 20px);
-    }
-
 }
