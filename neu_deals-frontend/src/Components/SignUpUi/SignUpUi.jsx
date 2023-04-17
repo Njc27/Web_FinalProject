@@ -27,8 +27,10 @@ const SignUpUi = () => {
             placeholder="Enter First name"
             {...register("fname", { required: true })}
           />
+
           <error className="error">
             {errors.fname?.type === "required" && "First Name is required"}
+
           </error>
         
 
@@ -36,8 +38,10 @@ const SignUpUi = () => {
             placeholder="Enter Last name"
             {...register("lname", { required: true })}
           />
+
           <error className="error">
             {errors.lname?.type === "required" && "Last Name is required"}
+
           </error>
 
           <input
@@ -47,7 +51,9 @@ const SignUpUi = () => {
               pattern: /[a-z.]*[@]\bnortheastern.edu/,
             })}
           />
+
           <error className="error">
+
             {errors.email?.type === "required" && "Email is required"}
             {errors.email?.type === "pattern" &&
               "Enter email id with domain @northeastern.edu"}
@@ -61,7 +67,9 @@ const SignUpUi = () => {
             pattern: /\d{3}-?\d{3}-\d{4}$/,
             })}
           />
+
           <error className="error">
+
             {errors.number?.type === "required" &&
               "Enter a valid phone number"}
             {errors.number?.type === "pattern" &&
@@ -74,7 +82,9 @@ const SignUpUi = () => {
             required: true,
             })}
           />
+
           <error className="error">
+
             {errors.number?.type === "required" &&
               "Enter valid address"}
           </error>
@@ -88,7 +98,9 @@ const SignUpUi = () => {
               
             })}
           />
+
           <error className="error">
+
             {errors.password?.type === "required" &&
               "Entered a valid password"}
             {errors.password?.type === "pattern" && <ul className='pass_ul'>
@@ -102,13 +114,16 @@ const SignUpUi = () => {
               }
           </error>
       
+
         <div>  
+
           <input className="button" type="submit" />
         </div>
             </form>
 
 
         </div>
+
     </div>
 </section>
   )

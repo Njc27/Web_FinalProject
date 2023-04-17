@@ -9,6 +9,7 @@ import Table2 from '../../Assests/Table2.jpg'
 import Table3 from '../../Assests/Table3.jpg'
 import iphone13 from '../../Assests/iphone13.jpg'
 import Jacket1 from '../../Assests/Jacket1.jpeg'
+
 import Chair from '../../Assests/chair.jpg'
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
@@ -19,6 +20,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
 import ProgressBar from 'react-bootstrap/ProgressBar';
+
 import { useNavigate } from 'react-router-dom'
 
 
@@ -29,6 +31,7 @@ const Home = () => {
   const productDetails = ()=>{
     navigate('/ProductDetails')
   }
+
   return (
     <div>
 
@@ -142,6 +145,7 @@ const Home = () => {
           $45<br></br>Puffer jacket in very good condition. Brown color.
         </Card.Text>
         <Button variant="primary" onClick={productDetails}>Details</Button>
+
       </Card.Body>
     </Card><br></br></Col>
       </Row>
@@ -176,6 +180,7 @@ const Home = () => {
       </Accordion.Item>
     </Accordion>
     <br></br>
+
     
     {/* Button----- */}
     <div>
@@ -193,9 +198,12 @@ const Home = () => {
   <ProgressBar animated now={75} />;
 
 
+
   </div>
   )
 }
 
+
 export default Home;
+
 
