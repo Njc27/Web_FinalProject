@@ -1,35 +1,26 @@
 
-import React from 'react'
+import React, {useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Closet from '../../Assests/Closet1.jpg'
 import Lamp from '../../Assests/Lamp.jpg'
 import Bed from '../../Assests/Bed.png'
-import HarryPotter from '../../Assests/HarryPotter.jpg'
-import Table2 from '../../Assests/Table2.jpg'
-import Table3 from '../../Assests/Table3.jpg'
-import iphone13 from '../../Assests/iphone13.jpg'
-import Jacket1 from '../../Assests/Jacket1.jpeg'
-
 import Chair from '../../Assests/chair.jpg'
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import './home.css'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
-import ProgressBar from 'react-bootstrap/ProgressBar';
-
+import HomeData from './HomeData'
 import { useNavigate } from 'react-router-dom'
 
 
 
 
 const Home = () => {
+  const [data, setData] = useState(HomeData);
   const navigate = useNavigate();
-  const productDetails = ()=>{
-    navigate('/ProductDetails')
+
+  const handleRegisterClick = () => {
+    navigate('/ProductDetails');
   }
 
   return (
@@ -84,73 +75,29 @@ const Home = () => {
     </br>
 
     {/* Card----- */}
-    <Container>
-      <Row>
-        <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={iphone13} />
-      <Card.Body>
-        <Card.Title>iphone13</Card.Title>
-        <Card.Text>
-          $550 <br></br> iphone 13 color - Sierra Blue in excellent condition. 
-        </Card.Text>
-        <Button variant="primary" onClick={productDetails}>Details</Button>
-      </Card.Body>
-    </Card><br></br></Col>
-    <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={Table2} />
-      <Card.Body>
-        <Card.Title>Coffee Table</Card.Title>
-        <Card.Text>
-          $25<br></br> Wooden Coffee Table in good condition.
-        </Card.Text>
-        <Button variant="primary" onClick={productDetails}>Details</Button>
-      </Card.Body>
-    </Card><br></br></Col>
-    <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={Table3} />
-      <Card.Body>
-        <Card.Title>Study Table</Card.Title>
-        <Card.Text>
-          $45<br></br> Solid wooden with galaxy patteren study table. 
-        </Card.Text>
-        <Button variant="primary" onClick={productDetails}>Details</Button>
-      </Card.Body>
-    </Card><br></br></Col>
-    {/* </Row><Row> */}
-        <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={Chair} />
-      <Card.Body>
-        <Card.Title>Office Chair</Card.Title>
-        <Card.Text>
-          $45<br></br> Moveable office chair, can be used as study chair.
-        </Card.Text>
-        <Button variant="primary" onClick={productDetails}>Details</Button>
-      </Card.Body>
-    </Card><br></br></Col>
-        <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={HarryPotter} />
-      <Card.Body>
-        <Card.Title>Harry Potter Book</Card.Title>
-        <Card.Text>
-          $10.<br></br>Harry Potter and the Philosopher's Stone.
-        </Card.Text>
-        <Button variant="primary" onClick={productDetails}>Details</Button>
-      </Card.Body>
-    </Card><br></br></Col>
-        <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={Jacket1} />
-      <Card.Body>
-        <Card.Title>Jacket</Card.Title>
-        <Card.Text>
-          $45<br></br>Puffer jacket in very good condition. Brown color.
-        </Card.Text>
-        <Button variant="primary" onClick={productDetails}>Details</Button>
 
-      </Card.Body>
-    </Card><br></br></Col>
-      </Row>
-    </Container>
-    <br></br>
+    <div className="col-md-9">
+            <div className="row">
+              {data.map((values) => {
+                const {id,title,price,image,description}= values;
+                return (
+                  <>
+                    <div className="col-md-4 mb-4" key={id}>
+                      <div className="card">
+                        <img src={image} className="card-img-top" alt="..." />
+                        <div className="card-body">
+                          <h5 className="card-title">{title}</h5>
+                          <p>Price {price}</p>
+                          <p className="card-text">{description}</p>
+                          <a href="#" onClick={handleRegisterClick} class="btn btn-primary">Details</a>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )
+              })}
+            </div>
+          </div>
     
     <div class="container-header">
       <p class="section-head-p">Frequently asked questions</p>
@@ -159,10 +106,10 @@ const Home = () => {
     </br>
 
     {/* Accordian----- */}
-    <Accordion defaultActiveKey="0">
+    <Accordion className="accordion" defaultActiveKey="0">
       <Accordion.Item eventKey="0">
         <Accordion.Header>Q1. What is the cost of a NEU DEALS account ?</Accordion.Header>
-        <Accordion.Body>
+        <Accordion.Body className='accordion-body'>
         It is free to register for an NEUDeals Business account. There’s no long-term commitment, and no minimum spend.
         </Accordion.Body>
       </Accordion.Item>
@@ -184,21 +131,18 @@ const Home = () => {
     
     {/* Button----- */}
     <div>
-    <Button variant='danger'>Post questions<br></br></Button>
+    <Button className="button-questions" variant='danger'>Post questions<br></br></Button>
+    {/* <button className="button">Post questions</button> */}
     <br></br>
     </div>
 
     {/* Alert------ */}
-    <br></br><br></br><br></br><div class="alert alert-info" role="alert">
+    <br></br><br></br><br></br><div className="alert alert-info" role="alert">
     <strong>Heads up! This alert needs your attention ! The Big Summer Sale is 
     almost coming to an end ! Hurry Up !</strong>
+
+    <br></br>
   </div>
-
-  {/* ProgressBar------ */}
-  <ProgressBar animated now={75} />;
-
-
-
   </div>
   )
 }
