@@ -1,13 +1,18 @@
 import react from "react"
+import { Navigate, useNavigate, useParams} from "react-router-dom"
 import "./sellForm.css"
-import { Navigate, useNavigate, useParams } from "react-router-dom"
-
 export default function(){
     const {item}=useParams();
     const navigate=useNavigate();
     
     const handleClick = (event)=>{
         navigate("/sell")
+    }
+
+    const handleSubmit = (event)=>{
+        // code for entering data to mongodb
+        event.preventDefault();
+        navigate("/")
     }
     return(
        <>
@@ -19,7 +24,7 @@ export default function(){
                 <hr/>
                 <div className="my-3 mx-4" style={{textAlign:"left"}}>
                     <h5 className="my-3">INCLUDE DETAILS</h5>
-                    <form action="">
+                    <form action={handleSubmit}>
                         <div class="mb-3 col-md-6">
                             <label for="exampleFormControlInput1" class="form-label">Ad Title *</label>
                             <input type="text" class="form-control" id="ad-title" required/>
@@ -30,30 +35,32 @@ export default function(){
                         </div>
                         <hr/>
                             <h5 className="my-3">SET A PRICE</h5>
-                            <div className="input-group mb-3 col-md-6">
+                            <div className="price-input input-group mb-3 col-md-6">
                             <span class="input-group-text">$</span>
                                 <div className="form-floating">
-                                    <input type="number" style={{width: "48%"}} class="form-control" id="item-price" placeholder="Amount" required/>
+                                    <input type="number" style={{width: "48%"}} class="num-input form-control" id="item-price" placeholder="Amount" required/>
                                     <label for="floatingInputGroup1">Price *</label>
                                 </div>
                             </div>
                         <hr/>
                             <h5 className="my-3">UPLOAD UPTO 4 IMAGES</h5>
-                            <div class="d-flex flex-row">
-                                <div class="mb-3 mx-1" style={{width:"50%"}}>
-                                    <input class="form-control" type="file" id="formFile" required/>
-                                </div>    
-                                <div class="mb-3 mx-1" style={{width:"50%"}}>
-                                    <input class="form-control" type="file" id="formFile" required/>
-                                </div>                          
-                            </div>
-                            <div class="d-flex flex-row">
-                                <div class="mb-3 mx-1" style={{width:"50%"}}>
-                                    <input class="form-control" type="file" id="formFile" />
-                                </div>    
-                                <div class="mb-3 mx-1" style={{width:"50%"}}>
-                                    <input class="form-control" type="file" id="formFile" />
-                                </div>                           
+                            <div className="image-input">
+                                <div class="d-flex flex-row">
+                                    <div class="mb-3 mx-1" style={{width:"50%"}}>
+                                        <input class="form-control" type="file" id="formFile" required/>
+                                    </div>    
+                                    <div class="mb-3 mx-2" style={{width:"50%"}}>
+                                        <input class="form-control" type="file" id="formFile" required/>
+                                    </div>                          
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <div class="mb-3 mx-1" style={{width:"50%"}}>
+                                        <input class="form-control" type="file" id="formFile" />
+                                    </div>    
+                                    <div class="mb-3 mx-1" style={{width:"50%"}}>
+                                        <input class="form-control" type="file" id="formFile" />
+                                    </div>                           
+                                </div>
                             </div>
                         <hr/>
                             <h5 className="my-3">CONFIRM YOUR LOCATION</h5>
@@ -80,15 +87,14 @@ export default function(){
                                 <input type="text" class="form-control" id="user-name"/>
                             </div>
                             <div className="input-group mb-3 col-md-6">
-                            <span class="input-group-text">+1</span>
                                 <div className="form-floating">
-                                    <input type="text" style={{width: "48%"}} class="form-control" id="user-mobile" placeholder="" required/>
+                                    <input type="text" style={{width: "50%"}} class="num-input form-control" id="user-mobile" placeholder="" required/>
                                     <label for="floatingInputGroup1">Mobile Phone Number *</label>
                                 </div>
                             </div>
                         <hr/>
                         <div className="submit">
-                        <button type="submit" class="btn btn-outline-secondary">POST AD</button>
+                        <button type="submit" onClick={navigate("/")} class="btn btn-outline-secondary">POST AD</button>
                         </div>
                     </form>
                 </div>
