@@ -1,7 +1,7 @@
 .section-head-p{
     color:azure;
     font: 1.5em sans-serif;
-
+    transform: translate(5%, 0%);
     margin-right: 35px;
     padding-right: 35px;
 }
@@ -9,16 +9,35 @@
 .carousel {
     margin-top: 25px;
     align-content: center;
-    transform: translate(25%, 0%);
+    transform: translate(30%, 0%);
     width:840px;
     height:550px;
   }
 
  .card{
-    transform: translate(25%, 0%);
+    transform: translate(75%, 0%);
     margin-right: 35px;
     margin-bottom: 35px;
  }
+
+ .col-md-4{
+    padding-right: 15px;
+ }
+
+ .accordion{
+    transform: translate(3%, 0%);
+ }
+
+ .accordion-body{
+    text-align: justify;
+ }
+
+ .alert{
+    transform: translate(3%, 0%);
+ }
+
+ 
+ 
 
  @media (max-width: 768px) {
     .carousel {
