@@ -17,6 +17,7 @@ const Categories = [
         title: "iPhone 13",
         price: 650,
         image: phone,
+        category: "Electronics",
         description: "iphone 13 color - Sierra Blue in excellent condition. A must buy"
     },
     {
@@ -24,6 +25,7 @@ const Categories = [
         title: "Pride and Prejudice",
         price: 20,
         image: prideprejudice,
+        category: "Books",
         description: "Pride and Prejudice, a novel by Jane Austen. Must read."
     },
     {
@@ -31,6 +33,7 @@ const Categories = [
         title: "Study Table",
         price: 80,
         image: studytable,
+        category: "Furnitures",
         description: "A wooden Study Table, with galaxy patteren study table."
     },
     {
@@ -38,6 +41,7 @@ const Categories = [
         title: "Harry Potter",
         price: 30,
         image: book,
+        category: "Books",
         description: "Harry Potter and the Philosopher's stone. Must read !"
     },
     {
@@ -45,6 +49,7 @@ const Categories = [
         title: "Coffee Table",
         price: 80,
         image: coffeetable,
+        category: "Furnitures",
         description: "Wooden Coffee Table in good condition.Perfect for coffee talks"
     },
     {
@@ -52,6 +57,7 @@ const Categories = [
         title: "Leather Jacket",
         price: 100,
         image: jacket,
+        category: "Apparels",
         description: "Leather jacket to keep warm during Fall winds. Brown color."
     },
     {
@@ -59,6 +65,7 @@ const Categories = [
         title: "Office Chair",
         price: 75,
         image: chair,
+        category: "Furnitures",
         description:"Moveable office chair, can be used as study chair."
     },
     {
@@ -66,6 +73,7 @@ const Categories = [
         title: "Winter Jacket",
         price: 90,
         image: winterjacket,
+        category: "Apparels",
         description:"Winter Jacket in excellent condition to keep warm."
     },
     {
@@ -73,6 +81,7 @@ const Categories = [
         title: "Twilight Series",
         price: 40,
         image: twilight,
+        category: "Books",
         description:"Twilight saga,to occupy you during your free time!"
     },
     {
@@ -80,6 +89,7 @@ const Categories = [
         title: "Apple Watch",
         price: 260,
         image: watch,
+        category: "Electronics",
         description:"Apple watch in best condition to aid you."
     },
     {
@@ -87,6 +97,7 @@ const Categories = [
         title: "Winter Boots",
         price: 70,
         image: boots,
+        category: "Apparels",
         description:"Boots to keep you warm during Boston Winter"
     },
     {
@@ -94,6 +105,7 @@ const Categories = [
         title: "Macbook Air",
         price: 860,
         image: macbook,
+        category: "Electronics",
         description:"Macbook Air in best condition, at a best price"
     },
 

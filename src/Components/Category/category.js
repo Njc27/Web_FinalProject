@@ -7,20 +7,27 @@ const Category = () => {
 
   const [data, setData] = useState(Categories);
   const navigate = useNavigate();
+  const filterResult=(catItem)=> {
+    const result=Categories.filter((curData)=>{
+      return curData.category===catItem;
+    });
+    setData(result);
+
+  }
 
   const handleRegisterClick = () => {
     navigate('/ProductDetails');
   }
   return (
     <>
-      <h1 className="text-center text-info">Let's Shop</h1>
+      <h1 className="text-center text-info" style={{color:'red'}}>Select your Style</h1>
       <div className="container-fluid mx-2">
         <div className="row mt-5 mx-2">
           <div className="col-md-3">
-            <div className="btn btn-warning w-100 mb-4">Electronics</div>
-            <div className="btn btn-warning w-100 mb-4">Furnitures</div>
-            <div className="btn btn-warning w-100 mb-4">Apparels</div>
-            <div className="btn btn-warning w-100 mb-4">Books</div>
+            <div className="btn btn-warning w-100 mb-4" onClick={()=> filterResult('Electronics')}>Electronics</div>
+            <div className="btn btn-warning w-100 mb-4" onClick={()=> filterResult('Furnitures')}>Furnitures</div>
+            <div className="btn btn-warning w-100 mb-4" onClick={()=> filterResult('Apparels')}>Apparels</div>
+            <div className="btn btn-warning w-100 mb-4" onClick={()=> filterResult('Books')}>Books</div>
 
           </div>
           <div className="col-md-9">
@@ -33,7 +40,7 @@ const Category = () => {
                       <img src={image} className="card-img-top" alt="..." />
                       <div className="card-body">
                         <h5 className="card-title">{title}</h5>
-                        <p>Price {price}</p>
+                        <p>Price ${price}</p>
                         <p className="card-text">{description}</p>
                         <a href="#" onClick={handleRegisterClick} className="btn btn-primary">Details</a>
                       </div>
