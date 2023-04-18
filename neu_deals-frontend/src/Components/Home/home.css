@@ -15,9 +15,10 @@
   }
 
  .card{
-    transform: translate(75%, 0%);
-    margin-right: 35px;
+    transform: translate(85%, 0%);
+    margin-right: 52px;
     margin-bottom: 35px;
+    
  }
 
  .col-md-4{
