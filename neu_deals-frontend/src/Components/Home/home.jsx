@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React,{useEffect} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Closet from '../../Assests/Closet1.jpg'
 import Lamp from '../../Assests/Lamp.jpg'
@@ -22,15 +22,25 @@ import Accordion from 'react-bootstrap/Accordion';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 import { useNavigate } from 'react-router-dom'
+import { getProducts } from '../../redux/actions/productActions'
+import { useDispatch, useSelector } from 'react-redux';
+
 
 
 
 
 const Home = () => {
+  const {productsData} = useSelector(state =>state.products);
+  console.log(productsData);
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
   const productDetails = ()=>{
     navigate('/ProductDetails')
   }
+  useEffect(()=>{
+    dispatch(getProducts());
+  },[])
 
   return (
     <div>

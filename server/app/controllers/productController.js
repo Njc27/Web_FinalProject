@@ -40,7 +40,7 @@ let Product = require('../models/Product');
         brandName:req.body.brandName,
         tags: req.body.tags,
         actualPrice:req.body.actualPrice,
-        discountPrice:req.body.discountPrice,
+        discountPrice:prod.id,
         userId: req.body.userId,
         image1:req.body.image1,
         image2:req.body.image2,
