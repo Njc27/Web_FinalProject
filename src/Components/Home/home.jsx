@@ -4,9 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Closet from '../../Assests/Closet1.jpg'
 import Lamp from '../../Assests/Lamp.jpg'
 import Bed from '../../Assests/Bed.png'
-import Table1 from '../../Assests/Table1.jpg'
+import HarryPotter from '../../Assests/HarryPotter.jpg'
 import Table2 from '../../Assests/Table2.jpg'
 import Table3 from '../../Assests/Table3.jpg'
+import iphone13 from '../../Assests/iphone13.jpg'
+import Jacket1 from '../../Assests/Jacket1.jpeg'
+
 import Chair from '../../Assests/chair.jpg'
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
@@ -18,8 +21,17 @@ import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
+import { useNavigate } from 'react-router-dom'
 
-const home = () => {
+
+
+
+const Home = () => {
+  const navigate = useNavigate();
+  const productDetails = ()=>{
+    navigate('/ProductDetails')
+  }
+
   return (
     <div>
 
@@ -75,70 +87,65 @@ const home = () => {
     <Container>
       <Row>
         <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={Table1} />
+      <Card.Img variant="top" src={iphone13} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>iphone13</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          $550 <br></br> iphone 13 color - Sierra Blue in excellent condition. 
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
       </Card.Body>
     </Card><br></br></Col>
     <Col><Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={Table2} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Coffee Table</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          $25<br></br> Wooden Coffee Table in good condition.
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
       </Card.Body>
     </Card><br></br></Col>
     <Col><Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={Table3} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Study Table</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          $45<br></br> Solid wooden with galaxy patteren study table. 
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
       </Card.Body>
     </Card><br></br></Col>
     {/* </Row><Row> */}
         <Col><Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={Chair} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Office Chair</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          $45<br></br> Moveable office chair, can be used as study chair.
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
       </Card.Body>
     </Card><br></br></Col>
         <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={Table1} />
+      <Card.Img variant="top" src={HarryPotter} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Harry Potter Book</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          $10.<br></br>Harry Potter and the Philosopher's Stone.
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
       </Card.Body>
     </Card><br></br></Col>
         <Col><Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={Table2} />
+      <Card.Img variant="top" src={Jacket1} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>Jacket</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          $45<br></br>Puffer jacket in very good condition. Brown color.
         </Card.Text>
-        <Button variant="primary">Details</Button>
+        <Button variant="primary" onClick={productDetails}>Details</Button>
+
       </Card.Body>
     </Card><br></br></Col>
       </Row>
@@ -173,6 +180,7 @@ const home = () => {
       </Accordion.Item>
     </Accordion>
     <br></br>
+
     
     {/* Button----- */}
     <div>
@@ -190,9 +198,12 @@ const home = () => {
   <ProgressBar animated now={75} />;
 
 
+
   </div>
   )
 }
 
-export default home;
+
+export default Home;
+
 

@@ -1,0 +1,17 @@
+.text-center h1{
+    color: green;
+}
+.text-info h1{
+    color: bisque;
+}
+  
+ .col-md-9{
+    width: 70%;
+    height: 100%;
+} 
+
+.card-img-top{
+    object-fit: contain;
+    width: 230px;
+    height: 250px;
+}

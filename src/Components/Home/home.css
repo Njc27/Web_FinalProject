@@ -1,6 +1,9 @@
 .section-head-p{
     color:azure;
     font: 1.5em sans-serif;
+
+    margin-right: 35px;
+    padding-right: 35px;
 }
 
 .carousel {
@@ -41,4 +44,5 @@
     .card{
         flex-basis: calc(100% - 20px);
     }
+
 }

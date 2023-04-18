@@ -8,7 +8,8 @@ import Sell from './Components/Sell/sell.jsx';
 import Cart from './Components/Cart/cart.jsx';
 import WishList from './Components/Wishlist/wishList.jsx';
 import Help from './Components/Help/help.jsx'
-import Categories from './Components/Categories/categories';
+import ProductDetails from './Components/ProductDetails/ProductDetails';
+import Category from './Components/Category/category';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Footer from './Components/Footer/footer';
 function App() {
@@ -25,7 +26,8 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishList" element={<WishList />} />
           <Route path="/help" element={<Help />}  />
-          <Route path="/categories" element={<Categories />}  />
+          <Route path="/category" element={<Category />}  />
+          <Route path="/ProductDetails" element={<ProductDetails />}  />
          </Routes>
         <Footer />
         </div>
