@@ -151,3 +151,35 @@ span {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 }
+
+@media (max-width: 390px) {
+  .navbar {
+    height: 60px;
+    width: 415px;
+    justify-content: space-between;
+  }
+  
+  .navbar-heading {
+    font-size: 20px;
+    margin-left: 0;
+  }
+  
+  .navbar-sell {
+    width: 80px;
+    height: 30px;
+  }
+
+  .nav-menu {
+  background-color: #000000;
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
