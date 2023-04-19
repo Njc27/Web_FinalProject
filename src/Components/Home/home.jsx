@@ -28,9 +28,15 @@ import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const navigate = useNavigate();
+
   const productDetails = ()=>{
     navigate('/ProductDetails')
   }
+ 
+  const helpDetails = ()=>{
+    navigate('/help')
+  }
+
 
   return (
     <div>
@@ -184,7 +190,8 @@ const Home = () => {
     
     {/* Button----- */}
     <div>
-    <Button variant='danger'>Post questions<br></br></Button>
+    {/* <Button variant='danger'>Ask for Help<br></br></Button> */}
+    <Button variant='danger' onClick={helpDetails}>Ask for Help</Button>
     <br></br>
     </div>
 
