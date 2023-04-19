@@ -42,10 +42,10 @@ const SignUpUi = () => {
             onChange={(e) =>{setFname(e.target.value)}}
           />
 
-          <error className="error">
+          {/* <error className="error">
             {errors.fname?.type === "required" && "First Name is required"}
 
-          </error>
+          </error> */}
         
 
           <input
@@ -55,10 +55,10 @@ const SignUpUi = () => {
 
           />
 
-          <error className="error">
+          {/* <error className="error">
             {errors.lname?.type === "required" && "Last Name is required"}
 
-          </error>
+          </error> */}
 
           <input
             placeholder="Enter primary email"
@@ -79,22 +79,15 @@ const SignUpUi = () => {
     
         
           <input placeholder="Enter phone number"
-            {...register("number", {
+            {...register("phoneNumber",{
               required: true,
-            pattern: /\d{3}-?\d{3}-\d{4}$/,
+            pattern: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/,
             })}
 
             onChange={(e) =>{setPhoneNumber(e.target.value)}}
           />
-          {/* <error>
-            {errors.number?.type === "minLength" &&
-              "Entered number is less than 6 digits"}
-            {errors.number?.type === "maxLength" &&
-              "Entered number is more than 12 digits"}
-          </error> */}
 
           <error className="error">
-
             {errors.number?.type === "required" &&
               "Enter a valid phone number"}
             {errors.number?.type === "pattern" &&

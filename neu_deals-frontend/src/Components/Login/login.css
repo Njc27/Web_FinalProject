@@ -4,7 +4,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
-  background: rgba(255, 255, 255, 0.845);
+  background: rgba(255, 255, 255);
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
 }
@@ -36,7 +36,7 @@ form .txt_field{
   position: absolute;
   top: 50%;
   left: 5px;
-  color: #ffffff;
+  color: #1e1e1e;
   transform: translateY(-50%);
   font-size: 16px;
   pointer-events: none;
