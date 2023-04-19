@@ -10,7 +10,7 @@
     margin-top: 25px;
     align-content: center;
     transform: translate(30%, 0%);
-    width:840px;
+    width:740px;
     height:550px;
   }
 
@@ -76,8 +76,8 @@
     }
 
     .carousel {
-      transform: translate(25%, 0%);
-      width: 69%;
+      transform: translate(30%, 0%);
+      width: 68%;
       height: auto;
       justify-content: center;
       align-items: center;
@@ -112,3 +112,19 @@
      }
 
     }
+
+    @media only screen and (max-width: 390px) {
+        .card {
+            justify-content: center;
+            align-items: center;
+            max-width: 900%;
+            width: 110%;
+            margin-right: 52px;
+            margin-bottom: 35px;
+        }
+
+        .col-md-9 {
+            width:10%;
+        }
+    }
+      
