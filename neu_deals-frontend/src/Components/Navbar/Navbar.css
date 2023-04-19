@@ -44,6 +44,7 @@
   transition: 350ms;
 }
 
+
 .nav-text {
   display: flex;
   justify-content: start;
@@ -124,7 +125,7 @@ span {
 @media screen and (max-width: 768px) {
   .navbar {
     height: 60px;
-    width: 730px;
+    width: 768px;
     justify-content: space-between;
   }
   
@@ -152,10 +153,13 @@ span {
   }
 }
 
+
+
+
 @media (max-width: 390px) {
   .navbar {
     height: 60px;
-    width: 415px;
+    width: 425px;
     justify-content: space-between;
   }
   
@@ -181,5 +185,7 @@ span {
   transition: 850ms;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+
+  
 }
 
