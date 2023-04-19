@@ -18,8 +18,8 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Categories',
-    path: '/categories',
+    title: 'Category',
+    path: '/category',
     icon: <FaIcons.FaLayerGroup /> ,
     cName: 'nav-text'
   },

@@ -19,7 +19,7 @@ const HomeData = [
         title: "Coffee Table",
         price: "$20",
         image: Table2,
-        description: "Wooden coffee table in good condition. Rosewood platform."
+        description: "Wooden coffee table in good condition."
     },
     {
         id:3,
