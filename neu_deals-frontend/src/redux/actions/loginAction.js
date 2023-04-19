@@ -1,8 +1,8 @@
 import { ActionTypes } from "../constants/actionTypes";
 // import { userSignupService } from "../Services/loginService";
-import { userSignupService } from "../../Services/loginService";
+import { userSignupService,userLoginService } from "../../Services/loginService";
 
-export const userSignup = async(fname,lname,email,phoneNumber,address,password) =>{
+export const userSignup = (fname,lname,email,phoneNumber,address,password) =>{
     console.log('Received', fname,lname,email,phoneNumber,address,password);
 
     let body = {
@@ -14,7 +14,7 @@ export const userSignup = async(fname,lname,email,phoneNumber,address,password) 
         password:password
     }
 
-    return async(dispatch)=>{
+    return async dispatch =>{
         let respnd = await userSignupService(body);
     if(respnd.status === 201){
         dispatch({
@@ -28,10 +28,28 @@ export const userSignup = async(fname,lname,email,phoneNumber,address,password) 
             payload:null
         })
     }
-    console.log(respnd)
     }
-  
-    
+}
 
+export const loginUser = (email,password) =>{
+    let body = {
+        email:email,
+        password:password
+    }
+    return async dispatch =>{
+        let respnd = await userLoginService(body);
+    if(respnd.status === 201){
+        dispatch({
+            type:ActionTypes.LOGIN_ACTION,
+            payload:respnd
+        })
+    }
+    else{
+        dispatch({
+            type:ActionTypes.LOGIN_ACTION,
+            payload:null
+        })
+    }
+    }
 
 }

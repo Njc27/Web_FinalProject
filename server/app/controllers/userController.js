@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 var passwordReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,12}$/
 var reg = /[a-z.]*[@]\bnortheastern.edu/
 var user = /^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z]{6,10}$/
-// var phnNumber = /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
+var phnNumber = /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
 
 async function hashPassword(password) {
     const hash = await bcrypt.hash(password, 10);
@@ -57,12 +57,12 @@ const register = async (req,res) =>{
             })
         }
 
-        // else if(!phnNumber.test(phoneNumber)){
-        //     res.send({
-        //         status:200,
-        //         message:"phone number must follow 'xxx-xxx-xxxx' format"
-        //     })
-        // }
+        else if(!phnNumber.test(phoneNumber)){
+            res.send({
+                status:200,
+                message:"phone number must follow 'xxx-xxx-xxxx' format"
+            })
+        }
 
         else if(!passwordReg.test(password)){
             res.send({
@@ -92,6 +92,7 @@ const register = async (req,res) =>{
                     status:"200",
                     message:"An Error Occured"
                 })
+                console.log(error);
             })
         }
     }

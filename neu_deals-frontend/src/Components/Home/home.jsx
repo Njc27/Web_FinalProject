@@ -1,5 +1,7 @@
 
+
 import React, {useState} from 'react'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Closet from '../../Assests/Closet1.jpg'
 import Lamp from '../../Assests/Lamp.jpg'
@@ -11,17 +13,25 @@ import './home.css'
 import Accordion from 'react-bootstrap/Accordion';
 import HomeData from './HomeData'
 import { useNavigate } from 'react-router-dom'
+import { getProducts } from '../../redux/actions/productActions'
+import { useDispatch, useSelector } from 'react-redux';
+
 
 
 
 
 const Home = () => {
+
   const [data, setData] = useState(HomeData);
+
   const navigate = useNavigate();
 
   const handleRegisterClick = () => {
     navigate('/ProductDetails');
   }
+  useEffect(()=>{
+    dispatch(getProducts());
+  },[])
 
   return (
     <div>
