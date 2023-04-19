@@ -7,7 +7,7 @@
 }
 .navbar-heading {
   margin: 0 auto; 
-  font-size: 24px;
+  font-size: 26px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -63,14 +63,17 @@
   align-items: center;
   padding: 0 16px;
   border-radius: 4px;
+  
 }
 
 .nav-text a:hover {
   background-color: #e30a03ca;
+  color: #fefefe;
 }
 
 .nav-menu-items {
   width: 100%;
+  font-family: 'Quattrocent', sans-serif;
 }
 
 .navbar-toggle {
@@ -80,6 +83,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
+  font-family: 'Quattrocent', sans-serif;
 }
 
 span {
@@ -88,7 +92,6 @@ span {
 
 .navbar-heading {
   margin-left: 2rem;
-  font-size: 2rem;
   color: rgb(255, 255, 255);
   flex-grow: 1;
   text-align: center;
@@ -108,25 +111,44 @@ span {
   color: #e30a03ca;
 }
  */
- .navbar-sell {
-  display: inline-block;
-  background-color: #f44336;
-  color: white;
-  text-align: center;
-  font-size: 28px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 16px;
-  border: none;
+ .navbar-sell{
+  width: 100px;
+  height: 35px;
+  border: 1px solid;
+  background: #202020;
+  border-radius: 20px;
+  font-size: 18px;
+  color: #fefefe;
+  font-weight: 700;
   cursor: pointer;
-  text-decoration: none;
-  margin-right: 4rem;
-  font-weight: bold;
+  outline: none;
+  margin-right: 40px;
 }
 
-.navbar-sell:hover {
-  background-color: #e30a03ca;
+.navbar-sell:hover{
+  color: #cb2026;
+  /* border-color: #4d4d4d; */
+  transition: .5s;
 }
-
 .navbar-sell:active {
-  background-color: #c40002;
+  background-color: #cb2026;
+  color: #fefefe;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: 60px;
+    width: 730px;
+    justify-content: space-between;
+  }
+  
+  .navbar-heading {
+    font-size: 20px;
+    margin-left: 0;
+  }
+  
+  .navbar-sell {
+    width: 80px;
+    height: 30px;
+  }
 }

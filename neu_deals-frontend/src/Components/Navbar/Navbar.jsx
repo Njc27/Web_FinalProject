@@ -21,8 +21,7 @@ function Navbar() {
          <Link to='/home' className='navbar-heading'>
             NEU DEALS
          </Link>
-         <Link to='/sell' className='navbar-sell'>
-            SELL
+         <Link to='/sell'><button className="navbar-sell">SELL</button>
          </Link>
       </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>

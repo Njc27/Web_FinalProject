@@ -1,0 +1,33 @@
+  
+ .col-md-9{
+    width: 70%;
+    height: 100%;
+    transform: translate(5%, 0%);
+} 
+
+.card{
+    transform: translate(75%, 0%);
+    margin-right: 35px;
+    margin-bottom: 35px;
+    
+ }
+.card-img-top{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    width: 230px;
+    height: 150px;
+}
+
+.btn{
+    background-color:#cb2026;
+    border-color: black;
+}
+
+.container-fluid h1
+{
+    color: #cb2026;
+    font: 2em sans-serif;
+    font-weight: 550;
+}
