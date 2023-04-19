@@ -97,20 +97,6 @@ span {
   text-align: center;
 }
 
-
-/* .navbar-sell {
-  margin: 0 auto; 
-  margin-right: 4rem;
-  font-size: 28px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: rgb(255, 255, 255);
-  text-decoration: none ;
-}
-
-.navbar-sell:hover {
-  color: #e30a03ca;
-}
- */
  .navbar-sell{
   width: 100px;
   height: 35px;
@@ -151,4 +137,49 @@ span {
     width: 80px;
     height: 30px;
   }
+
+  .nav-menu {
+  background-color: #000000;
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
 }
+
+@media (max-width: 390px) {
+  .navbar {
+    height: 60px;
+    width: 415px;
+    justify-content: space-between;
+  }
+  
+  .navbar-heading {
+    font-size: 20px;
+    margin-left: 0;
+  }
+  
+  .navbar-sell {
+    width: 80px;
+    height: 30px;
+  }
+
+  .nav-menu {
+  background-color: #000000;
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+
