@@ -114,7 +114,7 @@ export default function(){
                             <div className="address">
                                 <div class="form-group my-2">
                                     <label for="inputAddress">Address</label>
-                                    <input type="text" class="form-control" id="AddressLine1" placeholder="360 Huntington Ave, Boston, MA 02115" value={addressLine1} onChange={(event) => setAddressLine1(event.target.value)}/>
+                                    <input type="text" class="form-control" id="AddressLine1" placeholder="360 Huntington Ave, Boston" value={addressLine1} onChange={(event) => setAddressLine1(event.target.value)}/>
                                 </div> 
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
