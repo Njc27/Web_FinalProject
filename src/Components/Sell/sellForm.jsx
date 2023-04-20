@@ -47,7 +47,6 @@ export default function(){
         navigate("/home")
     };
 
-
     const handleClick = (event)=>{
         navigate("/sell")
     }
@@ -60,7 +59,6 @@ export default function(){
                     <button onClick={handleClick}>
                         <p>BACK</p>
                     </button>
-                    {/* <p style={{textDecoration:"underline"}} onClick={handleClick}>BACK</p> */}
                 </div>
                 <hr/>
                 <div className="my-3 mx-4" style={{textAlign:"left"}}>
