@@ -10,7 +10,7 @@ export default function(){
         },
         {
             categoryName:'Electronics',
-            categoryItems: ['Laptop','Mobile','Headphone','Protable Heaters']
+            categoryItems: ['Laptop','Mobile','Headphone']
         },
         {
             categoryName:'Books',
