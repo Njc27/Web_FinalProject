@@ -6,7 +6,7 @@ export default function(){
     const categories=[
         {
             categoryName:'Furniture',
-            categoryItems :['Table','Chair','Closet','BedFrame','Matress','Shoe Rack','Lamps'],
+            categoryItems :['Table','Chair','Closet','BedFrame','Matress','Shoe Rack','Lamps','Protable Heaters'],
         },
         {
             categoryName:'Electronics',
@@ -14,7 +14,7 @@ export default function(){
         },
         {
             categoryName:'Books',
-            categoryItems:["Academics Books","Non Academic books","Notes"] 
+            categoryItems:["Academics Books","Non-Academic books","Notes"] 
         }
     ];
     
