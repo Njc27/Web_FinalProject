@@ -20,11 +20,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-
 import { useNavigate } from 'react-router-dom'
-
-
-
 
 const Home = () => {
   const navigate = useNavigate();
@@ -36,7 +32,6 @@ const Home = () => {
   const helpDetails = ()=>{
     navigate('/help')
   }
-
 
   return (
     <div>
