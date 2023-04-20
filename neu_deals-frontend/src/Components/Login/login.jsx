@@ -11,7 +11,6 @@ const Login = () => {
   const navigate = useNavigate();
   const {userData} =  useSelector(state =>state.user);
 
-
   useEffect(()=>{
     console.log(sessionStorage.getItem("userId"))
       if(sessionStorage.getItem("userId") !==undefined){
