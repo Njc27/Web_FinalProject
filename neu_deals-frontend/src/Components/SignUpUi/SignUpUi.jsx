@@ -20,8 +20,68 @@ const SignUpUi = () => {
   const [address,setAddress] = useState('');
   const [password,setPassword] = useState('');
 
+  const [fname_error,setFname_error] = useState(false);
+  const [lname_error,setLname_error] = useState(false);
+  const [email_error,setEmail_error] = useState(false);
+  const [phoneNumber_error,setPhoneNumber_error] = useState(false);
+  const [address_error,setAddress_error] = useState(false);
+  const [password_error,setPassword_error] = useState(false);
+
   const {userData} =  useSelector(state =>state.user);
   const navigate = useNavigate();
+
+  var passwordReg = /^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#\$%\^&\*]).{8,12}$/
+var reg = /[a-z.]*[@]\bnortheastern.edu/
+var user = /^(?=.[a-z])(?=.[A-Z])[a-zA-Z]{6,10}$/
+var phnNumber = /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
+
+  useEffect(()=>{
+    if(fname === ''){
+     setFname_error(true);
+    }
+    else{
+      setFname_error(false);
+    }
+
+    if(lname === ''){
+      setLname_error(true);
+     }
+     else{
+       setLname_error(false);
+     }
+
+     if(email === '' || !reg.test(email)){
+      setEmail_error(true);
+     }
+     else{
+      setEmail_error(false);
+     }
+
+     if(phoneNumber === '' || !phnNumber.test(phoneNumber)){
+      setPhoneNumber_error(true);
+     }
+     else{
+      setPhoneNumber_error(false);
+     }
+
+     console.log(password);
+     console.log(passwordReg.test(password))
+
+    //  if(password === '' || !passwordReg.test(password)){
+    //   setPassword_error(true);
+    //  }
+    //  else{
+    //   setPassword_error(false);
+    //  }
+
+     if(address === ''){
+      setAddress_error(true);
+     }
+     else{
+      setAddress_error(false);
+     }
+  })
+
 
 
   useEffect(()=>{
@@ -37,7 +97,12 @@ const SignUpUi = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
     const onSubmit = e => {
       e.preventDefault();
-      dispatch(userSignup(fname,lname,email,phoneNumber,address,password));
+      if(fname === '' || lname=== '' || email === '' || phoneNumber==='' || address==='' || password===''){
+        alert('Fields cannot be null');
+      }
+      else{
+        dispatch(userSignup(fname,lname,email,phoneNumber,address,password));
+      }
     }
 
   return (
@@ -55,23 +120,28 @@ const SignUpUi = () => {
             onChange={(e) =>{setFname(e.target.value)}}
           />
 
-          {/* <error className="error">
-            {errors.fname?.type === "required" && "First Name is required"}
+          {fname_error&&(
+            <div className="error">
+            {"First Name is required"}
 
-          </error> */}
+          </div>
+          )}
+         
         
 
           <input
-            placeholder="Enter Last name"
+            placeholder="Enter Last name" 
             {...register("lname", { required: true })}
             onChange={(e) =>{setLname(e.target.value)}}
 
           />
 
-          {/* <error className="error">
-            {errors.lname?.type === "required" && "Last Name is required"}
+            {lname_error&&(
+            <div className="error">
+            {"Last Name is required"}
 
-          </error> */}
+          </div>
+          )}
 
           <input
             placeholder="Enter primary email"
@@ -82,13 +152,15 @@ const SignUpUi = () => {
             onChange={(e) =>{setEmail(e.target.value)}}
 
           />
+          {
+            email_error&&(
+              <div className="error">
 
-          <error className="error">
-
-            {errors.email?.type === "required" && "Email is required"}
-            {errors.email?.type === "pattern" &&
-              "Enter email id with domain @northeastern.edu"}
-          </error>
+            {"Enter email id with domain @northeastern.edu"}
+          </div>
+            )
+          }
+          
     
         
           <input placeholder="Enter phone number"
@@ -100,13 +172,13 @@ const SignUpUi = () => {
             onChange={(e) =>{setPhoneNumber(e.target.value)}}
           />
 
-          <error className="error">
-            {errors.number?.type === "required" &&
-              "Enter a valid phone number"}
-            {errors.number?.type === "pattern" &&
-              "Enter your phone number in the format 'xxx-xxx-xxxx'"}
-          </error>
-
+          {
+            phoneNumber_error&&(
+              <div className="error">
+              {"Enter your phone number in the format 'xxx-xxx-xxxx'"}
+          </div>
+            )
+          }
           <input
             placeholder='Enter your Address'
             {...register("address", {
@@ -115,14 +187,13 @@ const SignUpUi = () => {
             onChange={(e) =>{setAddress(e.target.value)}}
 
           />
+          {address_error&&(
+            <div className="error">
 
-          <error className="error">
+          {"Enter valid address"}
+          </div>
+          )}
 
-            {errors.number?.type === "required" &&
-              "Enter valid address"}
-          </error>
-      
-    
           <input
             placeholder="Enter password"
             type='password'
@@ -134,12 +205,11 @@ const SignUpUi = () => {
             onChange={(e) =>{setPassword(e.target.value)}}
 
           />
+          {/* {password_error&&(
+            <div className="error">
 
-          <error className="error">
-
-            {errors.password?.type === "required" &&
-              "Entered a valid password"}
-            {errors.password?.type === "pattern" && <ul className='pass_ul'>
+            {"Entered a valid password"}
+              {<ul className='pass_ul'>
                 Password should contain
                 <li>At least one capital letter,</li>
                 <li>At least one small letter,</li>
@@ -148,7 +218,10 @@ const SignUpUi = () => {
                 <li> And minimum length of 8,12</li>
             </ul>
               }
-          </error>
+          </div>
+          )} */}
+
+          
         <div>  
 
           <input className="button" type="submit"/>

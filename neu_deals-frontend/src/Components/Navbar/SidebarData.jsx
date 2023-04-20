@@ -18,12 +18,6 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Cart',
-    path: '/cart',
-    icon: <FaIcons.FaShoppingCart  />,
-    cName: 'nav-text'
-  },
-  {
     title: 'Help',
     path: '/help',
     icon: <IoIcons.IoMdHelpCircle />,

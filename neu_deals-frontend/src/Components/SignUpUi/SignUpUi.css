@@ -10,6 +10,10 @@
   background-color: white;
 }
 
+.error{
+  color: var(--color-red);
+}
+
 .register h2{
   font-family: var(--Pacifico);
 }

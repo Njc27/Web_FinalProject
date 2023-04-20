@@ -19,7 +19,7 @@ const createSession = async (req,res,next) =>{
           quantity: 1,
         }],
         mode: 'payment',    
-        success_url: 'https://localhost:3000/payment',
+        success_url: 'http://localhost:3000/payment',
         cancel_url: 'http://localhost:3000/',
       });
       res.send({url:session.url});
