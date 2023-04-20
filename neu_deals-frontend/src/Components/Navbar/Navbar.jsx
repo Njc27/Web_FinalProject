@@ -47,7 +47,7 @@ console.log(sessionStorage.getItem("userId"));
 
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
+     <IconContext.Provider value={{ color: '#fff', paddingRight: '20px' }}>
       <div className='navbar'>
          <Link to='#' className='menu-bars'>
              <FaIcons.FaBars onClick={showSidebar} />

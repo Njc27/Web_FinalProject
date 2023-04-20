@@ -25,7 +25,8 @@ const SignUpUi = () => {
 
 
   useEffect(()=>{
-      if(sessionStorage.getItem("userId")._id){
+    console.log(sessionStorage.getItem("userId"))
+      if(sessionStorage.getItem("userId")!==undefined){
         let obj = JSON.parse(sessionStorage.getItem("userId"));
         if(obj?._id){
           navigate('../home');
@@ -128,7 +129,7 @@ const SignUpUi = () => {
             type='password'
             {...register("password", {
             required: true,
-            pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,12}$/,
+            pattern: /^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#\$%\^&\*]).{8,12}$/,
               
             })}
             onChange={(e) =>{setPassword(e.target.value)}}

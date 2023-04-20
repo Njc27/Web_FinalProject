@@ -1,6 +1,7 @@
 .MainContainer{
     margin-left: 30px;
-    margin-top: 90px;
+    margin-top: 120px;
+    margin-bottom: 120px;
     box-sizing:border-box ;
     width: 100%;
     display: flex;
@@ -59,4 +60,74 @@
     padding: 8px 15px;
     margin-right: 12px;
     margin-top: 36px;
+}
+
+/* Media queries for 768px */
+@media (max-width: 768px) {
+    .MainContainer{
+        flex-direction: column;
+        margin-top: 100px;
+        margin-left: 0px;
+        width: 600px;
+        height: 600px;
+    }
+
+    .ProductPreview{
+        width: 90%;
+    }
+
+    .ProductData{
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .ProductTitle{
+        font-size: 36px;
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+
+    .ProductDescription{
+        font-size: 16px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .ProductImage{
+        margin-right: 10px;
+    }
+
+    .AddCart{
+        margin-top: 20px;
+    }
+}
+
+/* Media queries for 390px */
+@media (max-width: 390px) {
+
+    .MainContainer{
+        flex-direction: column;
+        margin-top: 100px;
+        margin-left: 0px;
+        width: 350px;
+        height: 520px;
+    }
+
+    .ProductTitle{
+        font-size: 24px;
+    }
+
+    .ProductDescription{
+        font-size: 14px;
+    }
+
+    .ProductImage{
+        max-width: 70px;
+        height: 70px;
+    }
+
+    .AddCart{
+        font-size: 14px;
+        padding: 6px 12px;
+    }
 }
