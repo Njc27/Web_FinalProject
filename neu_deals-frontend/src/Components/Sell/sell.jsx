@@ -14,7 +14,7 @@ export default function(){
         },
         {
             categoryName:'Books',
-            categoryItems:["Academics Books","Casual Books","Notes"] 
+            categoryItems:["Academics Books","Non Academic books","Notes"] 
         }
     ];
     
