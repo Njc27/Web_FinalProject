@@ -1,6 +1,7 @@
 const userController = require('./controllers/userController');
 const productController = require("./controllers/productController");
 const fileController = require("./controllers/fileController");
+const payementController = require("./controllers/payementController");
 
 
 let express = require('express'),
@@ -43,5 +44,9 @@ module.exports = function (app) {
   app.get("/products/getProduct/:id",productController.getProductById);
   app.get("/image/getAll",fileController.getImages);
   app.post("/image/upload",upload.single('image'),fileController.uploadImage);
+  app.get("/products/getProductByUser/:id",productController.getProductByUser);
+  app.post("/payement/makePayement",payementController.createSession);
+  app.get("/products/deleteProduct/:id",productController.deleteProdById);
+  app.post("/products/updateProd",productController.updateProductById);
 };
 

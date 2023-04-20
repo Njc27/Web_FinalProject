@@ -1,15 +1,23 @@
 .MainContainer{
     margin-left: 30px;
-    margin-top: 90px;
+    margin-top: 30px;
     box-sizing:border-box ;
     width: 100%;
-    display: flex;
     align-items: center;
 
 }
 
 .ProductPreview{
-    width: 50%;
+    text-align: left !important;
+    min-width: 700px;
+    /* width: 50%; */
+    min-height: 700px;
+    max-width: 700px;
+    max-height: 700px;
+    padding-right: 20px;
+    border-bottom: solid 1px white;
+    transition: opacity 2s linear;
+
 }
 
 .ProductPreview > img{
@@ -17,22 +25,23 @@
 }
 
 .ProductData{
-    width: 50%;
+    width: 30%;
+    text-align: left !important;
 }
 
 .ProductTitle{
     padding: 10px;
-    font-size: 48px;
+    /* font-size: 48px; */
     color: white;
-    font-weight: 600;
+    /* font-weight: 600; */
     margin-top: 0;
     margin-bottom: 16px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 
 .ProductDescription{
     font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
     color: rgb(255, 255, 255);
     margin-top: 0;
     margin-bottom: 16px;
@@ -40,20 +49,37 @@
     margin-right: 12px;
 }
 
+.previewImg{
+    min-width: 600px;
+    /* width: 50%; */
+    min-height: 600px;
+    max-width: 600px;
+    max-height: 600px;
+
+}
+
 .ProductImage{
     width: 100%;
     max-width: 90px;
-    height: 90px;
     border : 1px solid white;
     border-radius: 4px;
     margin-right: 20px;
     
+}
+.prod_prev{
+    margin-top: 10px;
+    display: inline-grid;
+    height: 400px;
+    padding: 12px;
+    margin-top: 13%;
 }
 
 .AddCart{
     color:rgb(255, 255, 255);
     background-color: rgb(187, 27, 27);
     font-size: 16px;
+    width: 200px;
+    margin-left: 12px;
     border-radius: 8px;
     border: 0;
     padding: 8px 15px;

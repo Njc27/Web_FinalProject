@@ -14,3 +14,27 @@ export const uploadProduct = async(body) =>{
     console.log(res);
     return res;
 }
+
+export const getProductByUserId = async(id) =>{
+    console.log('Recieved:',id);
+    let res =  await axios.get(`http://localhost:8080/products/getProductByUser/${id}`);
+    console.log(res);
+    return res;
+}
+
+export const getProductById = async (id) =>{
+    console.log('Recieved:',id);
+    let res =  await axios.get(`http://localhost:8080/products/getProduct/${id}`);
+    return res;
+}
+
+export const deleteProdById = async (id) =>{
+    console.log('Recieved:',id);
+    let res =  await axios.get(`http://localhost:8080/products/deleteProduct/${id}`);
+    return res;
+}
+
+export const updateProdById = async (body) =>{
+    let res =  await axios.post(`http://localhost:8080/products/updateProd`,body);
+    return res;
+}

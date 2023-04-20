@@ -25,7 +25,7 @@ const SignUpUi = () => {
 
 
   useEffect(()=>{
-      if(sessionStorage.getItem("userId")._id){
+      if(sessionStorage.getItem("userId") !== undefined){
         let obj = JSON.parse(sessionStorage.getItem("userId"));
         if(obj?._id){
           navigate('../home');

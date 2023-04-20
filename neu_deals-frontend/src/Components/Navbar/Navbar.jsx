@@ -72,7 +72,7 @@ console.log(sessionStorage.getItem("userId"));
                     <li key={index} className={item.cName}>
                       <Link to={item.path}>
                         {item.icon}
-                        <span>{item.title}</span>
+                        <span className='nav_title'>{item.title}</span>
                       </Link>
                     </li>
                   );
@@ -84,7 +84,7 @@ console.log(sessionStorage.getItem("userId"));
                     <li key={index} className={item.cName} onClick={() =>logOutUser()}>
                       <Link to={""}>
                         {item.icon}
-                        <span>{item.title}</span>
+                        <span className='nav_title'>{item.title}</span>
                       </Link>
                     </li>
                   );
@@ -95,7 +95,7 @@ console.log(sessionStorage.getItem("userId"));
                   <li key={index} className={item.cName}>
                     <Link to={item.path}>
                       {item.icon}
-                      <span>{item.title}</span>
+                      <span className='nav_title'>{item.title}</span>
                     </Link>
                   </li>
                 );
