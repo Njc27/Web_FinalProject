@@ -25,13 +25,14 @@ const SignUpUi = () => {
 
 
   useEffect(()=>{
-    if(sessionStorage.getItem("userId") !== undefined){
-      let obj = JSON.parse(sessionStorage.getItem("userId"));
-      if(obj?._id){
-        navigate('../home');
+    console.log(sessionStorage.getItem("userId"))
+      if(sessionStorage.getItem("userId")!==undefined){
+        let obj = JSON.parse(sessionStorage.getItem("userId"));
+        if(obj?._id){
+          navigate('../home');
+        }
       }
-    }
-},[userData])
+  },[userData])
 
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
@@ -128,7 +129,7 @@ const SignUpUi = () => {
             type='password'
             {...register("password", {
             required: true,
-            pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,12}$/,
+            pattern: /^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#\$%\^&\*]).{8,12}$/,
               
             })}
             onChange={(e) =>{setPassword(e.target.value)}}
