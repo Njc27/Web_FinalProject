@@ -190,7 +190,6 @@ const Home = () => {
     
     {/* Button----- */}
     <div>
-    {/* <Button variant='danger'>Ask for Help<br></br></Button> */}
     <Button variant='danger' onClick={helpDetails}>Ask for Help</Button>
     <br></br>
     </div>
