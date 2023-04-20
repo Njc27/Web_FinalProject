@@ -16,7 +16,8 @@ export const userSignup = (fname,lname,email,phoneNumber,address,password) =>{
 
     return async dispatch =>{
         let respnd = await userSignupService(body);
-    if(respnd.status === 201){
+        console.log(respnd)
+    if(respnd.status === 200){
         dispatch({
             type:ActionTypes.SIGNUP_ACTION,
             payload:respnd
@@ -38,7 +39,7 @@ export const loginUser = (email,password) =>{
     }
     return async dispatch =>{
         let respnd = await userLoginService(body);
-    if(respnd.status === 201){
+    if(respnd.status === 200){
         dispatch({
             type:ActionTypes.LOGIN_ACTION,
             payload:respnd

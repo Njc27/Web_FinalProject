@@ -1,7 +1,7 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { useNavigate } from "react-router-dom";
 import "../Login/login.css"
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 // import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux/actions/loginAction';
 
@@ -9,31 +9,30 @@ const Login = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {userData} =  useSelector(state =>state.user);
+
+
+  useEffect(()=>{
+    console.log(sessionStorage.getItem("userId"))
+      if(sessionStorage.getItem("userId") !==undefined){
+        let obj = JSON.parse(sessionStorage.getItem("userId"));
+        console.log(obj)
+        if(obj?._id){
+          navigate('../home');
+        }
+      }
+  },[userData])
+
 
   const handleRegisterClick = () => {
     navigate('/SignUpUi');
   }
 
-//   const handleSignIn = async(e) => {
-//     e.preventDefault();
-// userLogin(userName,email,password)
-// .then((res) => {
-//     console.log(res)
-//     if(res.data.validate){
-//         props.handle();
-//         navigate('/home')
-//        }
-//     else{
-//         alert('Enter valid credentials', res.message);
-//        }
-// }).catch((error) => {
-//     console.log(error)
-// });
-// }
+
+const [isActive,setIsActive] = useState(false)
   const handleSignIn = (e) =>{
     e.preventDefault();
     dispatch(loginUser(email,password));
-    navigate('/home')
   }
 
   const [email,setEmail] = useState('');
@@ -44,6 +43,22 @@ const Login = () => {
     <div className="center">
       <h1>Sign In</h1>
       <form method="post">
+      <div className='dropdown'>
+        <div className='dropdown-btn' onClick={(e) => setIsActive(!isActive)}>
+        What do you want to do today?<i class="fa fa-caret-down"></i>
+        </div>
+        {isActive &&
+          <div className='dropdown-content'>
+          <div className='dropdown-item'>
+            Buy
+          </div>
+          <div className='dropdown-item'>
+            Sell
+          </div>
+        </div>
+        }
+        
+      </div>
         <div className="txt_field">
           <input type="text" required  onChange={(e) =>{setEmail(e.target.value)}}/>
           <span></span>
