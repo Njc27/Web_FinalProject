@@ -1,6 +1,6 @@
 
 
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Closet from '../../Assests/Closet1.jpg'
@@ -23,15 +23,30 @@ import { useDispatch, useSelector } from 'react-redux';
 const Home = () => {
 
   const [data, setData] = useState(HomeData);
+  const {userData} =  useSelector(state =>state.user);
+
+
+
+  useEffect(()=>{
+    console.log(sessionStorage.getItem("userId"))
+      if(sessionStorage.getItem("userId") !==undefined){
+        let obj = JSON.parse(sessionStorage.getItem("userId"));
+        console.log(obj)
+        if(obj?._id){
+          navigate('../home');
+        }
+      }
+  },[userData])
+
 
   const navigate = useNavigate();
 
   const handleRegisterClick = () => {
     navigate('/ProductDetails');
   }
-  useEffect(()=>{
-    dispatch(getProducts());
-  },[])
+  // useEffect(()=>{
+  //   dispatch(getProducts());
+  // },[])
 
   return (
     <div>

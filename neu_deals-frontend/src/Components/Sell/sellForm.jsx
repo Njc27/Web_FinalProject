@@ -1,10 +1,21 @@
 import react from "react"
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Navigate, useNavigate, useParams} from "react-router-dom"
 import "./sellForm.css"
+import { uploadImage } from "../../Services/imageService";
+import { useDispatch } from 'react-redux';
+import { uploadProduct } from "../../Services/productService";
+
 export default function(){
+
+    
     const {item}=useParams();
     const navigate=useNavigate();
+    const dispatch = useDispatch();
+
+
+  
+
     
     const [adTitle, setAdTitle] = useState('');
     const [adProductBrand, setAdProductBrand] = useState('');
@@ -17,35 +28,66 @@ export default function(){
     const [zipCode, setZipCode] = useState('');
     const [userName, setUserName] = useState('');
     const [userMobile, setUserMobile] = useState('');
+    const [image1,setImage1] = useState('');
+    const [image2,setImage2] = useState('');
+    const [image3,setImage3] = useState('');
+    const [image4,setImage4] = useState('');
+
+    useEffect(() =>{
+        if(sessionStorage.getItem("userId") !==undefined){
+          let obj = JSON.parse(sessionStorage.getItem("userId"));
+          if(obj?._id){
+            setUserName(obj?._id);
+          }
+        }
+    },[sessionStorage.getItem("userId")]);
+
+
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        const formData = new FormData();
-        formData.append('adTitle', adTitle);
-        formData.append('adProductBrand', adProductBrand);
-        formData.append('adDescription', adDescription);
-        formData.append('itemPrice', itemPrice);
-        formData.append('discountedPrice', discountedPrice);
-        for (let i = 0; i < imageFiles.length; i++) {
-        formData.append('imageFiles', imageFiles[i]);
+        let body = {
+            prodName : adTitle,
+            brandName : adProductBrand,
+            categoryName:item?.category,
+            desc:adDescription,
+            actualPrice:itemPrice,
+            discountePrice:discountedPrice,
+            image1:image1,
+            image2:image2,
+            image3:image3,
+            image4:image4,
+            addressLine:addressLine1,
+            cityName:cityName,
+            zipCode:zipCode,
+            userId : userName
         }
-        formData.append('addressLine1', addressLine1);
-        formData.append('cityName', cityName);
-        formData.append('zipCode', zipCode);
-        formData.append('userName', userName);
-        formData.append('userMobile', userMobile);
+        uploadProduct(body).then(result =>{
+            console.log(result)
 
-        fetch('/api/ads', {
-        method: 'POST',
-        body: formData,
         })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
 
-        navigate("/home")
+
     };
+
+    const handleImageUpload = (e,imageNumber) =>{
+        const data = new FormData() 
+        data.append('image', e.target.files[0]);
+        uploadImage(data).then(result =>{
+            switch(imageNumber){
+                case 1:
+                    setImage1(result)
+                case 2:
+                    setImage2(result)
+                case 3:
+                    setImage3(result)
+                case 4:
+                    setImage4(result)
+            }
+        })
+        
+    }
 
 
     const handleClick = (event)=>{
@@ -94,18 +136,18 @@ export default function(){
                             <div className="image-input">
                                 <div class="d-flex flex-row">
                                     <div class="mb-3 mx-1" style={{width:"50%"}}>
-                                        <input class="form-control" type="file" id="formFile" required/>
+                                        <input class="form-control" type="file" id="formFile" onChange={(e)=>handleImageUpload(e)}/>
                                     </div>    
                                     <div class="mb-3 mx-2" style={{width:"50%"}}>
-                                        <input class="form-control" type="file" id="formFile" required/>
+                                        <input class="form-control" type="file" id="formFile" required onChange={(e)=>handleImageUpload(e)}/>
                                     </div>                          
                                 </div>
                                 <div class="d-flex flex-row">
                                     <div class="mb-3 mx-1" style={{width:"50%"}}>
-                                        <input class="form-control" type="file" id="formFile" />
+                                        <input class="form-control" type="file" id="formFile"  onChange={(e)=>handleImageUpload(e)}/>
                                     </div>    
                                     <div class="mb-3 mx-1" style={{width:"50%"}}>
-                                        <input class="form-control" type="file" id="formFile" />
+                                        <input class="form-control" type="file" id="formFile"  onChange={(e)=>handleImageUpload(e)}/>
                                     </div>                           
                                 </div>
                             </div>

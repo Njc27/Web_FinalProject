@@ -4,6 +4,7 @@ import Table1 from '../../Assests/Table1.jpg'
 import Table2 from '../../Assests/Table2.jpg'
 import ProductData from './ProductData'
 
+
 const ProductDetails = () => {
   return (
     <div className="MainContainer">

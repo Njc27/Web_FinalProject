@@ -20,6 +20,7 @@ export default function(){
     
     const [showitems,setshowitems]=useState(false)
     const [items,setitems]=useState([])
+    const [category,setCategory] = useState("");
     const navigate=useNavigate()
 
     const handleClick = (event) =>{
@@ -27,13 +28,14 @@ export default function(){
         for(let item of categories){
             if (item.categoryName==event.target.id){
                 setitems(item.categoryItems);
+                setCategory(item.categoryName);
             }
         }
     }
 
     const getFormPage = (event) =>{
         const sellingitem=event.target.id;
-        navigate(`/sell/form/${sellingitem}`)
+        navigate(`/sell/form/${category}`)
     }
 
     return(

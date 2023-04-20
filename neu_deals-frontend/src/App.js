@@ -22,6 +22,7 @@ function App() {
       <Navbar />
       <div className="container">
       <Routes>
+          <Route exact path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/SignUpUi" element={<SignUpUi />} />
           <Route path="/Login" element={<Login />} />
@@ -33,8 +34,6 @@ function App() {
 
           <Route path="/category" element={<Category />}  />
           <Route path="/ProductDetails" element={<ProductDetails />}  />
-
-
          </Routes>
         {/* <Footer /> */}
         </div>

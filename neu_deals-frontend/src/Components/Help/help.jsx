@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './help.css';
+import {useRef} from 'react'
+import emailjs from 'emailjs-com'
 
 const Help = () => {
   const [data, setData] = useState({name: "", email:"", phone:"", message:""});
@@ -15,13 +17,30 @@ const Help = () => {
     console.log(data);
   }
 
+  const form =useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_zil5oso', 'template_zdpsdcf', form.current, 'i-P7o958HGHVlVjeV')
+
+    
+      .then((result) => {
+          console.log(result.text);
+          alert("Thank you for reaching out to us. We will get back to you shortly");
+          e.target.reset()
+      }, (error) => {
+          console.log(error.text);
+      });
+    };
+
   return (
-    <form onSubmit={handleSubmit} className='contact-form'>
-      <h1 className='form-heading'>CONTACT<span>HERE</span></h1>
-      <input type="text" name="name" onChange={handleChange} value={data.name} placeholder='Enter Name' className='form-input' required/>
-      <input type="email" name="email" onChange={handleChange} value={data.email} placeholder='example@northeastern.com' className='form-input' required/>
-      <input type="tel" name="phone" onChange={handleChange} value={data.phone} placeholder='+91' className='form-input' pattern="^[0-9+\(\)#\.\s\/ext-]+$" required/>
-      <textarea name="message" onChange={handleChange} value={data.message} placeholder='Type here.....' className='form-input-message' required/>
+    <form ref={form} onSubmit={sendEmail} className='contact-form'>
+      <h1 className='form-heading'>CONTACT <span>HERE</span></h1>
+      <input type="text" name="name" placeholder='Enter Name' className='form-input' required/>
+      <input type="email" name="email"  placeholder='example@northeastern.com' className='form-input' required/>
+      <input type="tel" name="phone"  placeholder='+91' className='form-input' pattern="^[0-9+\(\)#\.\s\/ext-]+$" required/>
+      <textarea name="message" placeholder='Type here.....' className='form-input-message' required/>
       <button type='submit' className='form-button'>SEND</button>
       <p className='form-message'>{data.name}{data.email}{data.phone}{data.message}</p>
     </form>

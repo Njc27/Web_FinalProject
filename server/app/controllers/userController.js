@@ -84,7 +84,8 @@ const register = async (req,res) =>{
             .then(user =>{
                 res.send({
                     status:"201",
-                    message:"User Created Succesfully"
+                    message:"User Created Succesfully",
+                    userId:user
                 })
             })
             .catch(error =>{
@@ -232,7 +233,8 @@ const login = async(req,res) =>{
                 res.send({
                     status:200,
                     message:"Login Success",
-                    validate:true
+                    validate:true,
+                    userData:existingUsers[0]
                 })
             }
             else{

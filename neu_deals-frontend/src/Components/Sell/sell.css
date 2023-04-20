@@ -2,3 +2,11 @@
     width: auto;
     color: white;
 }
+
+.btn{
+color: white;
+}
+.btn :hover{
+    cursor: pointer;
+    background-color: rgb(237, 237, 237) !important;
+}

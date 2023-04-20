@@ -4,7 +4,8 @@ import { useForm } from 'react-hook-form';
 import './SignUpUi.css'
 import Fetch from 'react-fetch'
 import { userSignup } from '../../redux/actions/loginAction';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 // const fetch = require('node-fetch');
 
@@ -19,11 +20,23 @@ const SignUpUi = () => {
   const [address,setAddress] = useState('');
   const [password,setPassword] = useState('');
 
+  const {userData} =  useSelector(state =>state.user);
+  const navigate = useNavigate();
+
+
+  useEffect(()=>{
+      if(sessionStorage.getItem("userId")._id){
+        let obj = JSON.parse(sessionStorage.getItem("userId"));
+        if(obj?._id){
+          navigate('../home');
+        }
+      }
+  },[userData])
+
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
     const onSubmit = e => {
       e.preventDefault();
-      alert("yes");
       dispatch(userSignup(fname,lname,email,phoneNumber,address,password));
     }
 

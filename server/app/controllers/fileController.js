@@ -16,6 +16,7 @@ cloudinary.config({
 
 
 const uploadImage = async (req,res,next) =>{
+    console.log(req);
     try{
         const data = {
             image: req.file.path

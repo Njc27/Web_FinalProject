@@ -38,15 +38,19 @@ let Product = require('../models/Product');
         prodName:req.body.prodName ,    
         categoryName: req.body.categoryName,
         brandName:req.body.brandName,
-        tags: req.body.tags,
+        // description: req.body.description,
+        desc: req.body.desc,
         actualPrice:req.body.actualPrice,
-        discountPrice:prod.id,
+        discountPrice:req.body.discountPrice,
         userId: req.body.userId,
         image1:req.body.image1,
         image2:req.body.image2,
         image3:req.body.image3,
         image4:req.body.image4,
-        location:req.body.location,
+        addressLine:req.body.addressLine,
+        cityName:req.body.cityName,
+        zipCode:req.body.zipCode,
+
     });
     prod.save().then(result => {
         res.status(201).json({

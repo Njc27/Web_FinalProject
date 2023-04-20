@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
- 
-
+  
  .col-md-9{
     width: 70%;
     height: 100%;
@@ -25,38 +23,11 @@
 .btn{
     background-color:#cb2026;
     border-color: black;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    border-color: black;
 }
 
-.btn:hover{
-    background-color: black;
-    border-color: red;
-    color: white;
-}
-
-.text-info
+.container-fluid h1
 {
     color: #cb2026;
-}
-
-.heading{
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 40px;
-    margin-top: 20px;
-}
-
-@media (max-width: 390px){
-    .card-img-top{
-        width: 100%;
-        height: auto;
-    }
-
-    .col-md-9{
-        width: 70%;
-        height: 100%;
-        transform: translate(-10%,0%);
-    } 
+    font: 2em sans-serif;
+    font-weight: 550;
 }
