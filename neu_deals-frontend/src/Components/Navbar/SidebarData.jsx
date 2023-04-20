@@ -12,12 +12,6 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Login',
-    path: '/login',
-    icon: <AiIcons.AiOutlineLogin />,
-    cName: 'nav-text'
-  },
-  {
     title: 'Category',
     path: '/category',
     icon: <FaIcons.FaLayerGroup /> ,
@@ -34,5 +28,19 @@ export const SidebarData = [
     path: '/help',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text'
-  }
+  },
+  {
+    title: 'Login',
+    path: '/login',
+    icon: <AiIcons.AiOutlineLogin />,
+    cName: 'nav-text',
+    isLogin :true
+  },
+  {
+    title: 'Logout',
+    path: '/login',
+    icon: <AiIcons.AiOutlineLogin />,
+    cName: 'nav-text',
+    isLogout :true
+  },
 ];

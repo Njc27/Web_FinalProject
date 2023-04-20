@@ -99,6 +99,20 @@ span {
   text-align: center;
 }
 
+
+/* .navbar-sell {
+  margin: 0 auto; 
+  margin-right: 4rem;
+  font-size: 28px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(255, 255, 255);
+  text-decoration: none ;
+}
+
+.navbar-sell:hover {
+  color: #e30a03ca;
+}
+ */
  .navbar-sell{
   width: 100px;
   height: 35px;

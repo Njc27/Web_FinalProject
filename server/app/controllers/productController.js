@@ -4,32 +4,31 @@ let express = require('express'),
     uuidv4 = require('uuidv4'),
     router = express.Router();
 const DIR = './public/';
-const {fileSizeFormatter,saveImageArray} = require("../../utils/commonFunctions");
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, DIR);
-    },
-    filename: (req, file, cb) => {
-        const fileName = file.originalname.toLowerCase().split(' ').join('-');
-        cb(null, uuidv4() + '-' + fileName)
-    }
-});
-var upload = multer({
-    storage: storage,
-    fileFilter: (req, file, cb) => {
-        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
-            cb(null, true);
-        } else {
-            cb(null, false);
-            return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
-        }
-    }
-});
+
+
+
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, DIR);
+//     },
+//     filename: (req, file, cb) => {
+//         const fileName = file.originalname.toLowerCase().split(' ').join('-');
+//         cb(null, uuidv4() + '-' + fileName)
+//     }
+// });
+// var upload = multer({
+//     storage: storage,
+//     fileFilter: (req, file, cb) => {
+//         if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+//             cb(null, true);
+//         } else {
+//             cb(null, false);
+//             return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
+//         }
+//     }
+// });
 // Product model
 let Product = require('../models/Product');
-let Images = require('../models/images');
-
-
 
     const post = async(req,res,next) =>{
     try{
@@ -39,7 +38,8 @@ let Images = require('../models/images');
         prodName:req.body.prodName ,    
         categoryName: req.body.categoryName,
         brandName:req.body.brandName,
-        tags: req.body.tags,
+        // description: req.body.description,
+        desc: req.body.desc,
         actualPrice:req.body.actualPrice,
         discountPrice:req.body.discountPrice,
         userId: req.body.userId,
@@ -47,7 +47,10 @@ let Images = require('../models/images');
         image2:req.body.image2,
         image3:req.body.image3,
         image4:req.body.image4,
-        location:req.body.location,
+        addressLine:req.body.addressLine,
+        cityName:req.body.cityName,
+        zipCode:req.body.zipCode,
+
     });
     prod.save().then(result => {
         res.status(201).json({
@@ -68,24 +71,43 @@ let Images = require('../models/images');
 
     const getAll = async (req,res,next) =>{
     Product.find().populate('userId').populate('image1').populate('image2').populate('image3').populate('image4').then(data => {
-        res.status(200).json({
+        res.status(201).json({
             message: "Product list retrieved successfully!",
-            users: data
+            products: data
         });
     });
 };
 
-const getImages = async (req,res,next) =>{
-    console.log("Reachedd")
-    Images.find().then(data => {
+const getProductById = async(req,res,next) =>{
+    try{
+        let id = req.params.id
+        let prod = await Product.find({_id:id}).exec();
+        if(prod.length > 0){
+            let similarBrand = await Product.find({brandName:prod[0].brandName}).where('_id').ne(id).populate('image1').populate('image2').populate('image3').populate('image4').exec();
+            let similarCategory = await Product.find({categoryName:prod[0].categoryName}).where('_id').ne(id).populate('image1').populate('image2').populate('image3').populate('image4').exec();
+            res.status(200).json({
+                message: "Product retrieved successfully!",
+                product:prod,
+                relatedProducts:{
+                    similarBrand:similarBrand,
+                    similarCategory:similarCategory
+                }
+            });
+        }
         res.status(200).json({
-            message: "Image list retrieved successfully!",
-            users: data
-        });
-    });
-};
+            message: "A Error Occured"
+        })
+    }
+    catch(err){
+        res.status(200).json({
+            message: err
+        }) 
+    }
+}
+
+
 module.exports = {
     getAll,
-    getImages,
     post,
+    getProductById
 }

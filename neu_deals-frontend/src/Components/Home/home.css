@@ -74,8 +74,8 @@
     }
 
     .carousel {
-      transform: translate(30%, 0%);
-      width: 68%;
+      transform: translate(25%, 0%);
+      width: 69%;
       height: auto;
       justify-content: center;
       align-items: center;

@@ -18,7 +18,6 @@ const Categories = [
         price: 650,
         image: phone,
         category: "Electronics",
-        reset:"RemoveFilter",
         description: "iphone 13 color - Sierra Blue in excellent condition. A must buy"
     },
     {
@@ -27,7 +26,6 @@ const Categories = [
         price: 20,
         image: prideprejudice,
         category: "Books",
-        reset:"RemoveFilter",
         description: "Pride and Prejudice, a novel by Jane Austen. Must read."
     },
     {
@@ -36,7 +34,6 @@ const Categories = [
         price: 80,
         image: studytable,
         category: "Furnitures",
-        reset:"RemoveFilter",
         description: "A wooden Study Table, with galaxy patteren study table."
     },
     {
@@ -45,7 +42,6 @@ const Categories = [
         price: 30,
         image: book,
         category: "Books",
-        reset:"RemoveFilter",
         description: "Harry Potter and the Philosopher's stone. Must read !"
     },
     {
@@ -54,7 +50,6 @@ const Categories = [
         price: 80,
         image: coffeetable,
         category: "Furnitures",
-        reset:"RemoveFilter",
         description: "Wooden Coffee Table in good condition.Perfect for coffee talks"
     },
     {
@@ -63,7 +58,6 @@ const Categories = [
         price: 100,
         image: jacket,
         category: "Apparels",
-        reset:"RemoveFilter",
         description: "Leather jacket to keep warm during Fall winds. Brown color."
     },
     {
@@ -72,7 +66,6 @@ const Categories = [
         price: 75,
         image: chair,
         category: "Furnitures",
-        reset:"RemoveFilter",
         description:"Moveable office chair, can be used as study chair."
     },
     {
@@ -81,7 +74,6 @@ const Categories = [
         price: 90,
         image: winterjacket,
         category: "Apparels",
-        reset:"RemoveFilter",
         description:"Winter Jacket in excellent condition to keep warm."
     },
     {
@@ -90,7 +82,6 @@ const Categories = [
         price: 40,
         image: twilight,
         category: "Books",
-        reset:"RemoveFilter",
         description:"Twilight saga,to occupy you during your free time!"
     },
     {
@@ -99,7 +90,6 @@ const Categories = [
         price: 260,
         image: watch,
         category: "Electronics",
-        reset:"RemoveFilter",
         description:"Apple watch in best condition to aid you."
     },
     {
@@ -108,7 +98,6 @@ const Categories = [
         price: 70,
         image: boots,
         category: "Apparels",
-        reset:"RemoveFilter",
         description:"Boots to keep you warm during Boston Winter"
     },
     {
@@ -117,7 +106,6 @@ const Categories = [
         price: 860,
         image: macbook,
         category: "Electronics",
-        reset:"RemoveFilter",
         description:"Macbook Air in best condition, at a best price"
     },
 
