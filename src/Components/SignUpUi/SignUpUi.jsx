@@ -1,13 +1,7 @@
 import React, { useEffect } from 'react'
-// import bgImg from '../../Assests/sale.jpeg'
 import { useForm } from 'react-hook-form';
 import './SignUpUi.css'
 import Fetch from 'react-fetch'
-
-
-// const fetch = require('node-fetch');
-
-// const fetch = require('node-fetch');
 
 const SignUpUi = () => {
 
