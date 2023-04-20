@@ -63,20 +63,20 @@
     .col-md-9{
         width: 70%;
         height: 100%;
-        transform: translate(-6%,0%);
     } 
 }
 
 @media (max-width: 768px){
     .card-img-top{
-        width: 100%;
-        height: auto;
+        width: 1000px;
+        height: 120px;
+        transform: translate(-37%,0%);
     }
 
     .col-md-9{
-        width: 70%;
+        width: 45%;
         height: 100%;
-        transform: translate(-4%,0%);
+        transform: translate(-10%,0%);
     } 
 
     .btn{
