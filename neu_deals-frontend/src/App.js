@@ -7,7 +7,6 @@ import Login from './Components/Login/login.jsx';
 import Sell from './Components/Sell/sell.jsx';
 import SellForm from "./Components/Sell/sellForm.jsx"
 import Cart from './Components/Cart/cart.jsx';
-import WishList from './Components/Wishlist/wishList.jsx';
 import Help from './Components/Help/help.jsx'
 import SellerHistory from './SellerHistory/SellerHistory';
 import EditForm from './Components/editForm/editForm';
@@ -31,7 +30,6 @@ function App() {
           <Route path="/sell" element={<Sell />} />
           <Route path="/sell/form/:item" element={<SellForm/>}/>
           <Route path="/cart" element={<Cart />} />
-          <Route path="/wishList" element={<WishList />} />
           <Route path="/help" element={<Help />}  />
           <Route path="/sellerHistory" element={<SellerHistory />}  />
           <Route path="/category" element={<Category />}  />
@@ -39,7 +37,7 @@ function App() {
           <Route path="/ProductDetails/:item" element={<ProductDetails />}  />
           <Route path = "editProd" element = {<EditForm/>} />
          </Routes>
-        {/* <Footer /> */}
+        <Footer />
         </div>
       </Router>
     </>

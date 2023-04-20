@@ -16,10 +16,10 @@ const HomeData = [
     },
     {
         id:2,
-        title: "Coffee Table",
+        title: "Office Chair",
         price: "$20",
-        image: Table2,
-        description: "Wooden coffee table in good condition."
+        image: Chair,
+        description: "Office chair in good condition."
     },
     {
         id:3,
@@ -32,14 +32,14 @@ const HomeData = [
         id:4,
         title: "Harry Potter",
         price: 30,
-        image: Chair,
+        image: HarryPotter,
         description: "Harry Potter and the Philosopher's stone. Everyone needs this!"
     },
     {
         id:5,
         title: "Coffee Table",
         price: 80,
-        image: HarryPotter,
+        image: Table2,
         description: "Wooden Coffee Table in good condition. Perfect for those cozy evening coffee talks."
     },
     {

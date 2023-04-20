@@ -128,7 +128,7 @@ const SignUpUi = () => {
             type='password'
             {...register("password", {
             required: true,
-            pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,12}$/,
+            pattern: /^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#\$%\^&\*]).{8,12}$/,
               
             })}
             onChange={(e) =>{setPassword(e.target.value)}}

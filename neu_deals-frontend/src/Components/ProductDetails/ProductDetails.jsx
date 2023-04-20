@@ -71,6 +71,7 @@ const ProductDetails = () => {
         <div>
            <button className='AddCart' onClick={() =>{goToPayement()}}>Buy Now</button>
         </div>
+
         </div>
         
           </>

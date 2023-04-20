@@ -24,12 +24,6 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Wishlist',
-    path: '/wishList',
-    icon: <FaIcons.FaHeart  />,
-    cName: 'nav-text'
-  },
-  {
     title: 'Help',
     path: '/help',
     icon: <IoIcons.IoMdHelpCircle />,

@@ -58,6 +58,10 @@ const Home = () => {
   //   dispatch(getProducts());
   // },[])
 
+  const helpDetails = () =>{
+    navigate('/help')
+  }
+
   return (
     <div>
 
@@ -168,7 +172,8 @@ const Home = () => {
     
     {/* Button----- */}
     <div>
-    <Button className="button-questions" variant='danger'>Post questions<br></br></Button>
+    <Button variant='danger' style={{width: '150px'}} onClick={helpDetails}>Ask for Help</Button>
+    {/* <Button className="button-questions" variant='danger'>Post questions<br></br></Button> */}
     {/* <button className="button">Post questions</button> */}
     <br></br>
     </div>

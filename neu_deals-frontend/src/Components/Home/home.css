@@ -41,12 +41,11 @@
     transform: translate(3%, 0%);
  }
 
+
  .btn{
     background-color:#cb2026;
     border-color: black;
 }
-
-
 
  /* @media (max-width: 768px) {
     .carousel {
@@ -171,4 +170,5 @@
           transform: none;
           margin-right: 5px;
         }
+
       }
