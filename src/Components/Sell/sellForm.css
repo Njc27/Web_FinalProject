@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+.external-container{
+    color: white;
+    margin: 15px auto ;
+}
+.num-input{
+    height: 25px !important;
+}
+input{
+    height: 35px;
+}
+span{
+    height: 34px;
+    margin-left: 0px ;
+}
+.btn{
+    height: 50px;
+    width: 100px;
+    padding: auto;
+}
+
+button {
+    background-color: #f44336; /* use a bold color */
+    border: none;
+    border-radius: 9px; /* round the edges */
+    color: white;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0px 10px; /* add some padding */
+    text-align: center;
+    justify-content: center;
+    padding-top: 6px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out; /* add a smooth transition */
+  }
+  
+  button:hover {
+    background-color: #d32f2f; /* darken the background on hover */
+  }
+  
