@@ -77,7 +77,7 @@ transition: .5s;
   display: none;
 }
 
-@media screen and (min-width: 860px)  {
+@media screen and (min-width: 768px)  {
   .register .col-2 img{
     display: initial;
   }

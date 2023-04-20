@@ -25,13 +25,13 @@ const SignUpUi = () => {
 
 
   useEffect(()=>{
-      if(sessionStorage.getItem("userId")._id){
-        let obj = JSON.parse(sessionStorage.getItem("userId"));
-        if(obj?._id){
-          navigate('../home');
-        }
+    if(sessionStorage.getItem("userId") !== undefined){
+      let obj = JSON.parse(sessionStorage.getItem("userId"));
+      if(obj?._id){
+        navigate('../home');
       }
-  },[userData])
+    }
+},[userData])
 
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm()

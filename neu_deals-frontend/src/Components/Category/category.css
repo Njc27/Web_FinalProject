@@ -1,4 +1,6 @@
-  
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+ 
+
  .col-md-9{
     width: 70%;
     height: 100%;
@@ -23,19 +25,21 @@
 .btn{
     background-color:#cb2026;
     border-color: black;
-<<<<<<< HEAD
     font-family: 'Poppins', sans-serif;
     color: white;
     border-color: black;
     width: 100px;
-=======
->>>>>>> 2367e4243352ce482650de5c97d93d6ed70c822d
 }
 
-.container-fluid h1
+.btn:hover{
+    background-color: black;
+    border-color: red;
+    color: white;
+}
+
+.text-info
 {
     color: #cb2026;
-<<<<<<< HEAD
 }
 
 .heading{
@@ -56,8 +60,4 @@
         height: 100%;
         transform: translate(-6%,0%);
     } 
-=======
-    font: 2em sans-serif;
-    font-weight: 550;
->>>>>>> 2367e4243352ce482650de5c97d93d6ed70c822d
 }
