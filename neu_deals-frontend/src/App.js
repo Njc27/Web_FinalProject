@@ -8,12 +8,14 @@ import Sell from './Components/Sell/sell.jsx';
 import SellForm from "./Components/Sell/sellForm.jsx"
 import Cart from './Components/Cart/cart.jsx';
 import Help from './Components/Help/help.jsx'
+import SellerHistory from './SellerHistory/SellerHistory';
+import EditForm from './Components/editForm/editForm';
 
 import Category from './Components/Category/category'
 import ProductDetails from './Components/ProductDetails/ProductDetails.jsx';
-
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Footer from './Components/Footer/footer';
+import Payment from './Components/Payment/Payment';
 function App() {
   return (
     <>
@@ -29,9 +31,11 @@ function App() {
           <Route path="/sell/form/:item" element={<SellForm/>}/>
           <Route path="/cart" element={<Cart />} />
           <Route path="/help" element={<Help />}  />
-
+          <Route path="/sellerHistory" element={<SellerHistory />}  />
           <Route path="/category" element={<Category />}  />
-          <Route path="/ProductDetails" element={<ProductDetails />}  />
+          <Route path ="/payment" element = {<Payment/>} />
+          <Route path="/ProductDetails/:item" element={<ProductDetails />}  />
+          <Route path = "editProd" element = {<EditForm/>} />
          </Routes>
         <Footer />
         </div>

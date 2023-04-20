@@ -51,7 +51,7 @@ const Category = () => {
                         <h5 className="card-title">{title}</h5>
                         <p>Price ${price}</p>
                         <p className="card-text">{description}</p>
-                        <a href="#" onClick={handleRegisterClick} className="btn btn-primary">Details</a>
+                        <a href="#" onClick={() =>handleRegisterClick()} className="btn btn-primary">Details</a>
                       </div>
                     </div>
                   </div>

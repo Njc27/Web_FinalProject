@@ -1,30 +1,21 @@
-import react from "react"
+import React from "react"
 import { useState,useEffect } from "react";
-import { Navigate, useNavigate, useParams} from "react-router-dom"
-import "./sellForm.css"
+import { Navigate, useNavigate, useParams,useLocation} from "react-router-dom"
+import "./editForm.css"
 import { uploadImage } from "../../Services/imageService";
 import { useDispatch } from 'react-redux';
-import { uploadProduct } from "../../Services/productService";
+import { updateProdById } from "../../Services/productService";
 
-export default function(){
-
-    
+export default function EditForm(){
     const {item}=useParams();
     const navigate=useNavigate();
-    const dispatch = useDispatch();
-
-    console.log(item);
-
-
-  
-
-    
+    const dispatch = useDispatch();  
+    const [catergoryName,setCatergoryName] = useState('');  
     const [adTitle, setAdTitle] = useState('');
     const [adProductBrand, setAdProductBrand] = useState('');
     const [adDescription, setAdDescription] = useState('');
     const [itemPrice, setItemPrice] = useState(0);
     const [discountPrice, setDiscountedPrice] = useState(0);
-    const [imageFiles, setImageFiles] = useState([]);
     const [addressLine1, setAddressLine1] = useState('');
     const [cityName, setCityName] = useState('');
     const [zipCode, setZipCode] = useState('');
@@ -34,6 +25,8 @@ export default function(){
     const [image2,setImage2] = useState('');
     const [image3,setImage3] = useState('');
     const [image4,setImage4] = useState('');
+    const location = useLocation();
+
 
     useEffect(() =>{
         if(sessionStorage.getItem("userId") !==undefined){
@@ -43,6 +36,20 @@ export default function(){
           }
         }
     },[sessionStorage.getItem("userId")]);
+
+
+    
+    useEffect(() =>{
+        setCatergoryName(location?.state?.categoryName);
+        setAdTitle(location?.state?.prodName);
+        setAdProductBrand(location?.state?.brandName)
+        setAdDescription(location?.state?.desc)
+        setItemPrice(location?.state?.actualPrice)
+        setDiscountedPrice(location?.state?.discountPrice)
+        setAddressLine1(location?.state?.addressLine)
+        setCityName(location?.state?.cityName)
+        setZipCode(location?.state?.zipCode)       
+    },[location?.state]);
 
 
 
@@ -70,22 +77,31 @@ export default function(){
     const handleSubmit = (event) => {
         event.preventDefault();
         let body = {
+            id:location?.state?._id,
             prodName : adTitle,
             brandName : adProductBrand,
             categoryName:item,
             desc:adDescription,
             actualPrice:itemPrice,
             discountPrice:discountPrice,
-            image1:image1,
-            image2:image2,
-            image3:image3,
-            image4:image4,
             addressLine:addressLine1,
             cityName:cityName,
             zipCode:zipCode,
             userId : userName
         }
-        uploadProduct(body).then(result =>{ 
+        if(image1 !== ''){
+            body.image1 = image1;
+        }
+        if(image2 !== ''){
+            body.image2 = image2;
+        }
+        if(image3 !== ''){
+            body.image3 = image3;
+        }
+        if(image4 !== ''){
+            body.image4 = image4;
+        }
+        updateProdById(body).then(result =>{ 
             if(result?.data?.validate){
             alert("Product updated Succefully")
             navigate("../sellerHistory")
@@ -175,25 +191,12 @@ export default function(){
                                     </div>
                                 </div>
                             </div>
-                        <hr/>
-                            {/* <h5 className="my-3">REVIEW YOUR DETAILS</h5>
-                            <div class="mb-3 col-md-6">
-                                <label for="exampleFormControlInput1" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="user-name" value={userName} onChange={(event) => setUserName(event.target.value)}/>
-                            </div>
-                            <div className="input-group mb-3 col-md-6">
-                                <div className="form-floating">
-                                    <input type="text" style={{width: "50%"}} class="num-input form-control" id="user-mobile" placeholder="" value={userMobile} onChange={(event) => setUserMobile(event.target.value)} required/>
-                                    <label for="floatingInputGroup1">Mobile Phone Number *</label>
-                                </div>
-                            </div> */}
-                        <hr/>
                         <div className="submit">
-                        <button type="submit" onClick={(e) =>handleSubmit(e)} class="btn btn-outline-secondary">POST AD</button>
+                        <button type="submit" onClick={(e) =>handleSubmit(e)} class="btn btn-outline-secondary">Update AD</button>
                         </div>
                     </form>
                 </div>
             </div>
        </>
     )
-} 
+}

@@ -53,6 +53,9 @@ export default function(){
                     </div>
                 </div>
             </div>
+            <div>
+                <button type="submit" style={{width:"200px"}} onClick={()=>navigate('/sellerHistory')} class="btn btn-outline-secondary">My Products</button>
+            </div>
             {/* <Footer/> */}
         </>
     )
