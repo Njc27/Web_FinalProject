@@ -41,7 +41,6 @@ const Home = () => {
   return (
     <div>
 
-      {/* Carousel----- */}
     <Carousel>
       <Carousel.Item>
         <img
@@ -89,7 +88,6 @@ const Home = () => {
     <br>
     </br>
 
-    {/* Card----- */}
     <Container>
       <Row>
         <Col><Card style={{ width: '18rem' }}>
@@ -164,7 +162,6 @@ const Home = () => {
     <br>
     </br>
 
-    {/* Accordian----- */}
     <Accordion defaultActiveKey="0">
       <Accordion.Item eventKey="0">
         <Accordion.Header>Q1. What is the cost of a NEU DEALS account ?</Accordion.Header>
@@ -188,27 +185,20 @@ const Home = () => {
     <br></br>
 
     
-    {/* Button----- */}
     <div>
     <Button variant='danger' onClick={helpDetails}>Ask for Help</Button>
     <br></br>
     </div>
 
-    {/* Alert------ */}
     <br></br><br></br><br></br><div class="alert alert-info" role="alert">
     <strong>Heads up! This alert needs your attention ! The Big Summer Sale is 
     almost coming to an end ! Hurry Up !</strong>
   </div>
 
-  {/* ProgressBar------ */}
   <ProgressBar animated now={75} />;
-
-
-
   </div>
   )
 }
-
 
 export default Home;
 
