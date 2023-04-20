@@ -24,6 +24,6 @@ const ProductData = {
     ]
 }
 
-Object.freeze(ProductData); //This line of code just makes your object as a constant. No values can be updated.
+Object.freeze(ProductData);
 
 export default ProductData;
