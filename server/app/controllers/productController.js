@@ -6,28 +6,6 @@ let express = require('express'),
 const DIR = './public/';
 
 
-
-// const storage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//         cb(null, DIR);
-//     },
-//     filename: (req, file, cb) => {
-//         const fileName = file.originalname.toLowerCase().split(' ').join('-');
-//         cb(null, uuidv4() + '-' + fileName)
-//     }
-// });
-// var upload = multer({
-//     storage: storage,
-//     fileFilter: (req, file, cb) => {
-//         if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
-//             cb(null, true);
-//         } else {
-//             cb(null, false);
-//             return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
-//         }
-//     }
-// });
-// Product model
 let Product = require('../models/Product');
 
     const post = async(req,res,next) =>{
@@ -55,6 +33,7 @@ let Product = require('../models/Product');
     prod.save().then(result => {
         res.status(201).json({
             message: "Product saved successfully!",
+            validate:true
         })
     }).catch(err => {
         console.log(err),
@@ -81,7 +60,7 @@ let Product = require('../models/Product');
 const getProductById = async(req,res,next) =>{
     try{
         let id = req.params.id
-        let prod = await Product.find({_id:id}).exec();
+        let prod = await Product.find({_id:id}).populate('image1').populate('image2').populate('image3').populate('image4').exec();
         if(prod.length > 0){
             let similarBrand = await Product.find({brandName:prod[0].brandName}).where('_id').ne(id).populate('image1').populate('image2').populate('image3').populate('image4').exec();
             let similarCategory = await Product.find({categoryName:prod[0].categoryName}).where('_id').ne(id).populate('image1').populate('image2').populate('image3').populate('image4').exec();
@@ -94,9 +73,12 @@ const getProductById = async(req,res,next) =>{
                 }
             });
         }
-        res.status(200).json({
-            message: "A Error Occured"
-        })
+        else{
+            res.status(200).json({
+                message: "A Error Occured"
+            })
+        }
+        
     }
     catch(err){
         res.status(200).json({
@@ -105,9 +87,114 @@ const getProductById = async(req,res,next) =>{
     }
 }
 
+const getProductByUser = async(req,res,next) =>{
+    try{
+        let id = req.params.id
+        console.log(id);
+        let prod = await Product.find({userId:id}).populate('image1').exec();
+        if(prod.length > 0){
+            res.status(200).json({
+                message: "Product retrieved successfully!",
+                product:prod,
+            });
+        }
+        else{
+            res.status(200).json({
+                message: "No products found"
+            })
+        }
+       
+    }
+    catch(err){
+        res.status(200).json({
+            message: err
+    })
+    }
+}
+
+ const deleteProdById =async (req,res) =>{
+    try{
+        let id = req.params.id;
+        console.log(id)
+        let prod = await Product.find({_id:id}).exec();
+        console.log(prod);
+        if(prod.length  === 0 ){
+            res.send({
+                status:200,
+                message:"Product id not present"
+            })  
+        }
+        else {
+            let response = await Product.deleteOne({ _id: id});
+            if(response.deletedCount === 1){
+                res.send({
+                    status:200,
+                    message:"Product Deleted succesfully"
+                })
+            }
+            else{
+                res.send({
+                    status:200,
+                    message:"A error Occured"
+                })
+            }
+        }
+    }
+        catch(err){
+            console.log(err);
+        }
+    
+}
+
+const updateProductById = async(req,res) =>{
+    try{
+        let id = req.body.id;
+    const resposnce = await Product.findOneAndUpdate({ _id: id},
+        {
+        prodName:req.body.prodName ,    
+        categoryName: req.body.categoryName,
+        brandName:req.body.brandName,
+        desc: req.body.desc,
+        actualPrice:req.body.actualPrice,
+        discountPrice:req.body.discountPrice,
+        userId: req.body.userId,
+        image1:req.body.image1,
+        image2:req.body.image2,
+        image3:req.body.image3,
+        image4:req.body.image4,
+        addressLine:req.body.addressLine,
+        cityName:req.body.cityName,
+        zipCode:req.body.zipCode,
+        })
+    console.log(resposnce);
+    if(!resposnce){
+        res.send({
+            status:200,
+            message:"Product not found"
+        }) 
+    }
+    else if(resposnce){
+        res.send({
+            status:200,
+            message:"Product Updated Succesfully",
+            validate:true
+        })
+    }
+    }catch(error){
+        res.send({
+            status:200,
+            error:error
+        })
+    }
+}
+
 
 module.exports = {
     getAll,
     post,
-    getProductById
+    getProductById,
+    getProductByUser,
+    updateProductById,
+    deleteProdById
+
 }

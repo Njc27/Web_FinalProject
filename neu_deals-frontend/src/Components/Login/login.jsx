@@ -12,8 +12,7 @@ const Login = () => {
   const {userData} =  useSelector(state =>state.user);
 
   useEffect(()=>{
-    console.log(sessionStorage.getItem("userId"))
-      if(sessionStorage.getItem("userId") !==undefined){
+      if(sessionStorage.getItem("userId") !== undefined){
         let obj = JSON.parse(sessionStorage.getItem("userId"));
         console.log(obj)
         if(obj?._id){

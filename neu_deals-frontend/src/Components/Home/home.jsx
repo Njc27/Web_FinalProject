@@ -22,27 +22,37 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Home = () => {
 
+  const dispatch  = useDispatch();
+
   const [data, setData] = useState(HomeData);
   const {userData} =  useSelector(state =>state.user);
+  const {productsData} =  useSelector(state =>state.products);
 
 
 
+
+  // useEffect(()=>{
+  //   console.log(sessionStorage.getItem("userId"))
+  //     if(sessionStorage.getItem("userId") !==undefined){
+  //       let obj = JSON.parse(sessionStorage.getItem("userId"));
+  //       console.log(obj)
+  //       if(obj?._id){
+  //         navigate('../home');
+  //       }
+  //     }
+  // },[userData])
+
+  
   useEffect(()=>{
-    console.log(sessionStorage.getItem("userId"))
-      if(sessionStorage.getItem("userId") !==undefined){
-        let obj = JSON.parse(sessionStorage.getItem("userId"));
-        console.log(obj)
-        if(obj?._id){
-          navigate('../home');
-        }
-      }
-  },[userData])
+    dispatch(getProducts());
+  },[])
+  console.log(productsData)
 
 
   const navigate = useNavigate();
 
-  const handleRegisterClick = () => {
-    navigate('/ProductDetails');
+  const handleRegisterClick = (prod) => {
+    navigate(`/ProductDetails/${prod}`);
   }
   // useEffect(()=>{
   //   dispatch(getProducts());
@@ -106,26 +116,28 @@ const Home = () => {
     {/* Card----- */}
 
     <div className="col-md-9">
-            <div className="row">
-              {data.map((values) => {
-                const {id,title,price,image,description}= values;
-                return (
-                  <>
-                    <div className="col-md-4 mb-4" key={id}>
-                      <div className="card">
-                        <img src={image} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                          <h5 className="card-title">{title}</h5>
-                          <p>Price {price}</p>
-                          <p className="card-text">{description}</p>
-                          <a href="#" onClick={handleRegisterClick} class="btn btn-primary">Details</a>
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                )
-              })}
-            </div>
+      {productsData?.length > 0 && (
+        <div className="row">
+        {productsData.map((values) => {
+          const {_id,prodName,discountPrice,image1,desc}= values;
+          return (
+            <>
+              <div className="col-md-4 mb-4" key={_id}>
+                <div className="card">
+                  <img src={image1?.imageUrl} className="card-img-top" alt="..." />
+                  <div className="card-body">
+                    <h5 className="card-title">{prodName}</h5>
+                    <p>Price {discountPrice}</p>
+                    <p className="card-text">{desc}</p>
+                    <input type = "button" onClick={() =>handleRegisterClick(_id)} value = "Details" class="btn btn-primary"/>
+                  </div>
+                </div>
+              </div>
+            </>
+          )
+          })}
+        </div>
+      )}
           </div>
     
     <div class="container-header">

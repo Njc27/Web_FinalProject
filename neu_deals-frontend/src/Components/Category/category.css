@@ -11,6 +11,10 @@
     transform: translate(75%, 0%);
     margin-right: 35px;
     margin-bottom: 35px;
+    max-height: 365px;
+    min-height: 365px;
+    max-width: 400px;
+    min-width: 230px;
     
  }
 .card-img-top{
@@ -20,6 +24,7 @@
     object-fit: contain;
     width: 230px;
     height: 150px;
+    margin-top: 12px;
 }
 
 .btn{
