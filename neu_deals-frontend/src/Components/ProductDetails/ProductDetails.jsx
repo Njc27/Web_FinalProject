@@ -23,7 +23,6 @@ const ProductDetails = () => {
 
         <div>
            <button className='AddCart'>Add To Cart</button>
-           <button className='AddCart'>Wishlist</button> 
         </div>
 
        </div>

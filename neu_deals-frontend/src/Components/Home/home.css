@@ -11,7 +11,7 @@
     align-content: center;
     transform: translate(40%, 0%);
     width:740px;
-    height:550px;
+    height:450px;
   }
 
  .card{
@@ -38,8 +38,6 @@
     transform: translate(3%, 0%);
  }
 
- 
- 
 
  /* @media (max-width: 768px) {
     .carousel {

@@ -52,6 +52,7 @@
   padding: 8px 0px 8px 16px;
   list-style: none;
   height: 60px;
+  width: 160px;
 }
 
 .nav-text a {
@@ -125,7 +126,7 @@ span {
 @media screen and (max-width: 768px) {
   .navbar {
     height: 60px;
-    width: 768px;
+    width: 700px;
     justify-content: space-between;
   }
   

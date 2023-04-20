@@ -135,7 +135,7 @@ const Home = () => {
     
     {/* Button----- */}
     <div>
-    <Button variant='danger' onClick={helpDetails}>Ask for Help</Button>
+    <Button variant='danger' style={{width: '150px'}} onClick={helpDetails}>Ask for Help</Button>
     {/* <Button className="button-questions" variant='danger'>Post questions<br></br></Button> */}
     {/* <button className="button">Post questions</button> */}
     <br></br>

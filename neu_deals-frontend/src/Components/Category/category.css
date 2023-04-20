@@ -28,6 +28,7 @@
     font-family: 'Poppins', sans-serif;
     color: white;
     border-color: black;
+    width: 100px;
 }
 
 .btn:hover{

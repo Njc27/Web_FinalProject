@@ -17,7 +17,7 @@ const Help = () => {
 
   return (
     <form onSubmit={handleSubmit} className='contact-form'>
-      <h1 className='form-heading'>CONTACT<span>HERE</span></h1>
+      <h1 className='form-heading'>CONTACT <span>HERE</span></h1>
       <input type="text" name="name" onChange={handleChange} value={data.name} placeholder='Enter Name' className='form-input' required/>
       <input type="email" name="email" onChange={handleChange} value={data.email} placeholder='example@northeastern.com' className='form-input' required/>
       <input type="tel" name="phone" onChange={handleChange} value={data.phone} placeholder='+91' className='form-input' pattern="^[0-9+\(\)#\.\s\/ext-]+$" required/>
