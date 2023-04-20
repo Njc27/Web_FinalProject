@@ -141,7 +141,7 @@ export default function(){
                             </div>
                         <hr/>
                         <div className="submit">
-                        <button type="submit" onClick={navigate("/")} class="btn btn-outline-secondary">POST AD</button>
+                        <button type="submit" onClick={navigate("/")} class="btn btn-outline-secondary">POST AN AD</button>
                         </div>
                     </form>
                 </div>
